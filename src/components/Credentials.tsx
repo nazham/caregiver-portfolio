@@ -93,6 +93,7 @@ export default function Credentials() {
                 type={doc.type}
                 pdfPath={doc.pdfPath}
                 thumbPath={doc.thumbPath}
+                priority={index < 2}
               />
             ))}
           </div>
