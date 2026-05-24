@@ -11,8 +11,8 @@ export default function Contact() {
   // Form Fields State
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [careType, setCareType] = useState(form.servicesOptions[0]);
-  const [shift, setShift] = useState(form.shiftOptions[0]);
+  const [careType, setCareType] = useState('');
+  const [shift, setShift] = useState('');
   const [extraDetails, setExtraDetails] = useState('');
 
   // Status States
@@ -31,6 +31,14 @@ export default function Contact() {
     }
     if (!phone.trim()) {
       setErrorMsg('Please enter your phone number.');
+      return;
+    }
+    if (!careType) {
+      setErrorMsg('Please select the type of care required.');
+      return;
+    }
+    if (!shift) {
+      setErrorMsg('Please select your preferred shift.');
       return;
     }
 
@@ -145,6 +153,8 @@ export default function Contact() {
                       setIsSubmitted(false);
                       setName('');
                       setPhone('');
+                      setCareType('');
+                      setShift('');
                       setExtraDetails('');
                     }}
                     className="mt-8 text-blue-600 hover:text-blue-800 font-semibold flex items-center justify-center gap-1 mx-auto cursor-pointer"
@@ -216,10 +226,13 @@ export default function Contact() {
                           id="contact-care-type"
                           value={careType}
                           onChange={(e) => setCareType(e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-slate-50 focus:bg-white appearance-none text-slate-800 cursor-pointer"
+                          className={`w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-slate-50 focus:bg-white appearance-none cursor-pointer ${
+                            careType ? 'text-slate-800' : 'text-slate-400'
+                          }`}
                         >
+                          <option value="" disabled hidden>Select care required...</option>
                           {form.servicesOptions.map((opt, oIdx) => (
-                            <option key={oIdx} value={opt}>{opt}</option>
+                            <option key={oIdx} value={opt} className="text-slate-800">{opt}</option>
                           ))}
                         </select>
                       </div>
@@ -236,10 +249,13 @@ export default function Contact() {
                           id="contact-shift"
                           value={shift}
                           onChange={(e) => setShift(e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-slate-50 focus:bg-white appearance-none text-slate-800 cursor-pointer"
+                          className={`w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-slate-50 focus:bg-white appearance-none cursor-pointer ${
+                            shift ? 'text-slate-800' : 'text-slate-400'
+                          }`}
                         >
+                          <option value="" disabled hidden>Select preferred shift...</option>
                           {form.shiftOptions.map((opt, oIdx) => (
-                            <option key={oIdx} value={opt}>{opt}</option>
+                            <option key={oIdx} value={opt} className="text-slate-800">{opt}</option>
                           ))}
                         </select>
                       </div>

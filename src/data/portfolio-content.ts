@@ -312,10 +312,18 @@ export const portfolioContent: PortfolioContent = {
     },
     form: {
       servicesOptions: [
-        "Post-Surgery Recovery",
-        "Elderly Care",
-        "Mobility Assistance",
-        "General Companionship",
+        "Elderly Care & Companionship",
+        "Medication Reminders & Health Monitoring",
+        "Mobility & Walking Assistance",
+        "Meal Preparation & Feeding Support",
+        "Bedridden Patient Care",
+        "Post-Hospital Recovery Support",
+        "Assistance with Daily Living",
+        "Appointment & Routine Assistance",
+        "Home Visit Caregiving Services",
+        "Support for Special Needs",
+        "Overnight & Daytime Care Support",
+        "Family Support & Supervision",
         "Other"
       ],
       shiftOptions: [
