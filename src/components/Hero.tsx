@@ -94,7 +94,7 @@ export default function Hero() {
                 alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
                 width={500}
                 height={500}
-                className="w-full h-auto rounded-2xl object-cover bg-slate-100"
+                className="w-full aspect-[4/5] rounded-2xl object-cover object-top bg-slate-100"
                 priority={true} // Informs Next.js to preload and assign high priority (LCP)
               />
               

@@ -117,7 +117,7 @@ export const portfolioContent: PortfolioContent = {
   personalInfo: {
     name: "Mohamed Rifai Mohamed Isham",
     brandName: "Isham Care",
-    profileImage: "/images/caregiver.png",
+    profileImage: "/images/caregiver.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop"
   },
   seo: {
