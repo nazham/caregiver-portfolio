@@ -48,6 +48,13 @@ export interface SEOConfig {
   url: string;
 }
 
+export interface DocumentItem {
+  title: string;
+  type: 'Resume' | 'Certificate';
+  pdfPath: string;
+  thumbPath: string;
+}
+
 export interface PortfolioContent {
   personalInfo: {
     name: string;
@@ -100,6 +107,7 @@ export interface PortfolioContent {
     description: string;
     certifications: Certification[];
   };
+  documents: DocumentItem[];
   contact: {
     heading: string;
     description: string;
@@ -267,6 +275,26 @@ export const portfolioContent: PortfolioContent = {
       }
     ]
   },
+  documents: [
+    {
+      title: "Professional CV",
+      type: "Resume",
+      pdfPath: "/documents/isham-cv.pdf",
+      thumbPath: "/images/thumbnails/cv-thumb.webp"
+    },
+    {
+      title: "National Caregiver Certification",
+      type: "Certificate",
+      pdfPath: "/documents/aca-certificate.pdf",
+      thumbPath: "/images/thumbnails/aca-thumb.webp"
+    },
+    {
+      title: "Diploma in Caregiving",
+      type: "Certificate",
+      pdfPath: "/documents/medicina-diploma.pdf",
+      thumbPath: "/images/thumbnails/diploma-thumb.webp"
+    }
+  ],
   contact: {
     heading: "Let's discuss your care needs.",
     description: "Fill out the form to request a short-term visit, or reach out directly for urgent care requirements.",

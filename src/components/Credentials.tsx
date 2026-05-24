@@ -1,9 +1,10 @@
 import React from 'react';
 import { Award, ShieldCheck } from 'lucide-react';
 import { portfolioContent } from '@/data/portfolio-content';
+import DocumentCard from './DocumentCard';
 
 export default function Credentials() {
-  const { credentials } = portfolioContent;
+  const { credentials, documents } = portfolioContent;
 
   const getCardIcon = (index: number) => {
     // Return blue Award icon for first cert, teal for second
@@ -97,6 +98,26 @@ export default function Credentials() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Downloadable Documents Grid */}
+        <div className="mt-20 pt-20 border-t border-slate-800/80">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h3 className="text-2xl font-bold mb-3 text-white">Downloadable Documents</h3>
+            <p className="text-slate-400 text-sm">Verified document copies available for immediate review.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {documents.map((doc, index) => (
+              <DocumentCard
+                key={index}
+                title={doc.title}
+                type={doc.type}
+                pdfPath={doc.pdfPath}
+                thumbPath={doc.thumbPath}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
