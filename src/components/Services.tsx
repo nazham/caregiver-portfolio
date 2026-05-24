@@ -18,18 +18,20 @@ export default function Services() {
           <p className="text-[#0F172A]/55 leading-relaxed">{services.description}</p>
         </div>
 
-        {/* Services List Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+        {/* Services List Grid — Elegant, compact, and responsive list layout */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-2 mb-20">
           {services.list.map((service, idx) => (
-            <article 
+            <div 
               key={idx} 
-              className="flex items-start gap-4 p-5 bg-white rounded-xl border border-[#0F172A]/5 hover:border-[#C4A882]/30 transition-colors duration-300"
+              className="flex items-start gap-3 py-3 border-b border-[#0F172A]/5 hover:border-[#C4A882]/30 transition-colors duration-350 group"
             >
-              <div className="mt-0.5 shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-[#C4A882]" />
+              <div className="mt-1 shrink-0">
+                <CheckCircle2 className="w-4 h-4 text-[#C4A882] group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <span className="font-medium text-[#0F172A] text-base">{service}</span>
-            </article>
+              <span className="font-medium text-[#0F172A]/75 text-sm sm:text-[0.95rem] leading-relaxed transition-colors duration-300 group-hover:text-[#0F172A]">
+                {service}
+              </span>
+            </div>
           ))}
         </div>
 
