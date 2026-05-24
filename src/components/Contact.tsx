@@ -117,6 +117,9 @@ export default function Contact() {
                     <div>
                       <p className="text-sm text-blue-200">{details.locationLabel}</p>
                       <p className="font-semibold text-lg">{details.location}</p>
+                      {details.locationDetails && (
+                        <p className="text-sm text-blue-100 mt-1 leading-relaxed">{details.locationDetails}</p>
+                      )}
                     </div>
                   </div>
                 </div>

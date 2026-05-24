@@ -38,6 +38,7 @@ export interface ContactInfo {
   emailLabel: string;
   location: string;
   locationLabel: string;
+  locationDetails?: string;
 }
 
 export interface SEOConfig {
@@ -305,8 +306,9 @@ export const portfolioContent: PortfolioContent = {
       whatsappLabel: "WhatsApp",
       email: "Supportivecaregiver.ae@gmail.com",
       emailLabel: "Professional Email",
-      location: "Colombo and surrounding areas. Willing to travel to nearby cities and regions based on client needs and arrangements.",
-      locationLabel: "Service Area"
+      location: "Colombo and surrounding areas",
+      locationLabel: "Service Area",
+      locationDetails: "Willing to travel to nearby cities and regions based on client needs and arrangements."
     },
     form: {
       servicesOptions: [
