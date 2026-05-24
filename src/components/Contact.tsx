@@ -44,11 +44,27 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate submission request
-    setTimeout(() => {
-      setIsSubmitting(false);
+    // Format WhatsApp message with markdown bolding
+    const message = `*New Care Inquiry (Isham Care)*
+
+*Name:* ${name.trim()}
+*Phone:* ${phone.trim()}
+*Care Required:* ${careType}
+*Preferred Shift:* ${shift}
+*Additional Details:* ${extraDetails.trim() ? extraDetails.trim() : 'None provided'}`;
+
+    // Clean recipient phone number (remove +, spaces, hyphens)
+    const whatsappNum = details.whatsapp ? details.whatsapp.replace(/[^0-9]/g, '') : '94772420800';
+
+    try {
+      // Execute redirection to WhatsApp Web / App
+      window.open(`https://wa.me/${whatsappNum}?text=${encodeURIComponent(message)}`, '_blank');
       setIsSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      setErrorMsg('Could not redirect to WhatsApp automatically. Please contact me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
