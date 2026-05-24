@@ -6,7 +6,7 @@ export default function Footer() {
   const { personalInfo } = portfolioContent;
 
   return (
-    <footer className="bg-[#FAFAFA] py-10 md:py-4 border-t border-[#0F172A]/5">
+    <footer className="bg-[#FAF6F0] py-10 md:py-4 border-t border-[#0F172A]/5">
       <div className="container-custom flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
         
         {/* Logo — Serif wordmark, no icon box */}

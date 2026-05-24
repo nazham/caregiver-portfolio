@@ -51,7 +51,7 @@ export default function About() {
               {about.values.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-[#FAFAFA] p-5 rounded-xl border border-[#0F172A]/5 flex gap-4 items-start transition-colors duration-300 hover:border-[#C4A882]/30"
+                  className="bg-[#FAF6F0] p-5 rounded-xl border border-[#0F172A]/5 flex gap-4 items-start transition-colors duration-300 hover:border-[#C4A882]/30"
                 >
                   <div className="bg-white p-2.5 rounded-lg border border-[#0F172A]/5 shrink-0">
                     {getIcon(item.iconName, 'w-5 h-5 text-[#C4A882]')}

@@ -157,7 +157,7 @@ export default function AICarePlanner() {
         {/* Results Showcase */}
         {carePlan && (
           <div 
-            className="bg-[#FAFAFA] border border-[#0F172A]/5 rounded-xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+            className="bg-[#FAF6F0] border border-[#0F172A]/5 rounded-xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
           >
             <h4 className="heading-serif text-xl font-bold text-[#0F172A] mb-2">{carePlan.title}</h4>
             <p className="text-[#0F172A]/50 mb-6 italic">{carePlan.intro}</p>

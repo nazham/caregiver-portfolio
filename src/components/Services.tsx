@@ -7,7 +7,7 @@ export default function Services() {
   const { services } = portfolioContent;
 
   return (
-    <section id="services" className="section-padding bg-[#FAFAFA]">
+    <section id="services" className="section-padding bg-[#FAF6F0]">
       <div className="container-custom">
         
         {/* Asymmetric Header — left-aligned with decorative rule */}

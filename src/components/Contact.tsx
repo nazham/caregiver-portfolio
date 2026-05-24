@@ -52,7 +52,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-[#FAFAFA] relative">
+    <section id="contact" className="section-padding bg-[#FAF6F0] relative">
       <div className="container-custom">
         
         {/* Main Banner Block */}

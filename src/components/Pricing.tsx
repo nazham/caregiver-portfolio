@@ -30,7 +30,7 @@ export default function Pricing() {
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-[#FAFAFA] border border-[#0F172A]/5 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
+          className="bg-[#FAF6F0] border border-[#0F172A]/5 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">

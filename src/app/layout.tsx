@@ -5,7 +5,7 @@ import "./globals.css";
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700"],
   display: "swap",
 });
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased bg-[#FAFAFA] text-[#0F172A] selection:bg-[#C4A882]/20 selection:text-[#0F172A]">
+      <body className="font-sans antialiased bg-[#FAF6F0] text-[#0F172A] selection:bg-[#C4A882]/20 selection:text-[#0F172A]">
         {children}
       </body>
     </html>
