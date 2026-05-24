@@ -30,7 +30,7 @@ export default function Credentials() {
           {credentials.certifications.map((cert, index) => (
             <article 
               key={index} 
-              className="bg-white/[0.03] border border-white/10 p-8 rounded-2xl hover:border-[#C4A882]/30 transition-colors duration-300 group"
+              className="bg-white/[0.03] border border-white/10 p-8 rounded-2xl hover:border-[#C4A882]/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group motion-reduce:transition-none motion-reduce:hover:transform-none"
             >
               <div className="flex items-start justify-between mb-8">
                 <div 

@@ -7,7 +7,7 @@ export default function Services() {
   const { services } = portfolioContent;
 
   return (
-    <section id="services" className="section-padding bg-[#FAF6F0]">
+    <section id="services" className="section-padding bg-[#FAF6F0] dark:bg-[#0B0F19] transition-colors duration-300">
       <div className="container-custom">
         
         {/* Asymmetric Header — left-aligned with decorative rule */}
@@ -15,7 +15,7 @@ export default function Services() {
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#C4A882] mb-3">What I Offer</p>
           <h2 className="section-title">{services.title}</h2>
           <div className="w-12 h-px bg-[#C4A882] mt-2 mb-5" aria-hidden="true"></div>
-          <p className="text-[#0F172A]/55 leading-relaxed">{services.description}</p>
+          <p className="text-[#0F172A]/55 dark:text-slate-400 leading-relaxed">{services.description}</p>
         </div>
 
         {/* Services List Grid — Elegant, compact, and responsive list layout */}
@@ -23,12 +23,12 @@ export default function Services() {
           {services.list.map((service, idx) => (
             <div 
               key={idx} 
-              className="flex items-start gap-3 py-3 border-b border-[#0F172A]/5 hover:border-[#C4A882]/30 transition-colors duration-350 group"
+              className="flex items-start gap-3 py-3 border-b border-[#0F172A]/5 dark:border-white/5 hover:border-[#C4A882]/30 dark:hover:border-[#C4A882]/30 transition-colors duration-350 group"
             >
               <div className="mt-1 shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#C4A882] group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <span className="font-medium text-[#0F172A]/75 text-sm sm:text-[0.95rem] leading-relaxed transition-colors duration-300 group-hover:text-[#0F172A]">
+              <span className="font-medium text-[#0F172A]/75 dark:text-slate-300 text-sm sm:text-[0.95rem] leading-relaxed transition-colors duration-300 group-hover:text-[#0F172A] dark:group-hover:text-slate-100">
                 {service}
               </span>
             </div>

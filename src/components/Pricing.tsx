@@ -11,7 +11,7 @@ export default function Pricing() {
   const activePlan = pricing.options[pricingTab];
 
   const getFeatureIcon = (idx: number) => {
-    const iconClass = "w-4 h-4 text-[#0F172A]/30 shrink-0";
+    const iconClass = "w-4 h-4 text-[#0F172A]/30 dark:text-slate-500 shrink-0";
     switch (idx) {
       case 0:
         return <Clock className={iconClass} />;
@@ -25,26 +25,28 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="section-padding bg-white">
+    <section id="pricing" className="section-padding bg-white dark:bg-[#161F30] transition-colors duration-300">
       <div className="container-custom">
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-[#FAF6F0] border border-[#0F172A]/5 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
+          className="bg-[#FAF6F0] dark:bg-[#0B0F19] border border-[#0F172A]/5 dark:border-white/5 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
             <div>
-              <h3 className="heading-serif text-2xl font-bold text-[#0F172A]">{pricing.title}</h3>
-              <p className="text-[#0F172A]/45 mt-1">{pricing.description}</p>
+              <h3 className="heading-serif text-2xl font-bold text-[#0F172A] dark:text-slate-100">{pricing.title}</h3>
+              <p className="text-[#0F172A]/45 dark:text-slate-400 mt-1">{pricing.description}</p>
             </div>
             
             {/* Sliding Toggle Control */}
-            <div className="bg-[#0F172A]/5 p-1 rounded-lg inline-flex relative border border-[#0F172A]/5">
+            <div className="bg-[#0F172A]/5 dark:bg-white/5 p-1 rounded-lg inline-flex relative border border-[#0F172A]/5 dark:border-white/5">
               <button 
                 onClick={() => setPricingTab('day')}
                 className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
-                  pricingTab === 'day' ? 'text-[#0F172A]' : 'text-[#0F172A]/40 hover:text-[#0F172A]/60'
+                  pricingTab === 'day' 
+                    ? 'text-[#0F172A] dark:text-slate-100' 
+                    : 'text-[#0F172A]/40 dark:text-slate-500 hover:text-[#0F172A]/60 dark:hover:text-slate-300'
                 }`}
               >
                 Day Visit
@@ -52,7 +54,9 @@ export default function Pricing() {
               <button 
                 onClick={() => setPricingTab('night')}
                 className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
-                  pricingTab === 'night' ? 'text-[#0F172A]' : 'text-[#0F172A]/40 hover:text-[#0F172A]/60'
+                  pricingTab === 'night' 
+                    ? 'text-[#0F172A] dark:text-slate-100' 
+                    : 'text-[#0F172A]/40 dark:text-slate-500 hover:text-[#0F172A]/60 dark:hover:text-slate-300'
                 }`}
               >
                 Night Visit
@@ -60,11 +64,11 @@ export default function Pricing() {
               
               {/* Sliding Background indicator */}
               <div 
-                className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white rounded-md border border-[#0F172A]/5 transition-transform duration-300 ease-out"
+                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-white dark:bg-[#161F30] rounded-md border border-[#0F172A]/5 dark:border-white/5 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
                 style={{ 
                   transform: pricingTab === 'day' 
-                    ? 'translateX(4px)' 
-                    : 'translateX(calc(100% + 4px))' 
+                    ? 'translateX(0)' 
+                    : 'translateX(100%)' 
                 }}
               />
             </div>
@@ -77,13 +81,13 @@ export default function Pricing() {
             <div className="order-2 md:order-1">
               <ul className="space-y-4">
                 {activePlan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-[#0F172A]/55 font-medium text-sm">
+                  <li key={idx} className="flex items-center gap-3 text-[#0F172A]/55 dark:text-slate-400 font-medium text-sm">
                     {getFeatureIcon(idx)}
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-[#0F172A]/30 mt-6 leading-relaxed">
+              <p className="text-xs text-[#0F172A]/30 dark:text-slate-500 mt-6 leading-relaxed">
                 {pricing.disclaimer}
               </p>
             </div>

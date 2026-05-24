@@ -17,7 +17,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
 
   return (
     <article 
-      className="group bg-white/[0.02] border border-white/5 hover:border-[#C4A882]/20 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 flex flex-col h-full"
+      className="group bg-white/[0.02] border border-white/5 hover:border-[#C4A882]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-2xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       {/* Thumbnail Cover — Full-bleed preview to eliminate empty space */}
       <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-white/5">

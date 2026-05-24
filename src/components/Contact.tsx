@@ -68,11 +68,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-[#FAF6F0] relative">
+    <section id="contact" className="section-padding bg-[#FAF6F0] dark:bg-[#0B0F19] relative transition-colors duration-300">
       <div className="container-custom">
         
         {/* Main Banner Block */}
-        <div className="bg-[#0F172A] rounded-2xl overflow-hidden">
+        <div className="bg-[#0F172A] rounded-2xl overflow-hidden border border-[#0F172A]/5 dark:border-white/5">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
@@ -145,7 +145,7 @@ export default function Contact() {
             </aside>
 
             {/* Form Column */}
-            <div className="lg:col-span-3 p-10 md:p-12 bg-white flex flex-col justify-center">
+            <div className="lg:col-span-3 p-10 md:p-12 bg-white dark:bg-[#161F30] flex flex-col justify-center transition-colors duration-300">
               {isSubmitted ? (
                 /* Success View with Animation */
                 <div 
@@ -154,9 +154,9 @@ export default function Contact() {
                   <div className="inline-flex bg-[#C4A882]/10 p-4 rounded-full mb-6">
                     <CheckCircle2 className="w-12 h-12 text-[#C4A882]" />
                   </div>
-                  <h4 className="heading-serif text-2xl font-bold text-[#0F172A] mb-2">Request Submitted!</h4>
-                  <p className="text-[#0F172A]/50 max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong className="text-[#0F172A]">{name}</strong>. I have received your request and will get back to you at <strong className="text-[#0F172A]">{phone}</strong> within 24 hours.
+                  <h4 className="heading-serif text-2xl font-bold text-[#0F172A] dark:text-slate-100 mb-2">Request Submitted!</h4>
+                  <p className="text-[#0F172A]/50 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                    Thank you, <strong className="text-[#0F172A] dark:text-slate-100">{name}</strong>. I have received your request and will get back to you at <strong className="text-[#0F172A] dark:text-slate-100">{phone}</strong> within 24 hours.
                   </p>
                   <button 
                     onClick={() => {
@@ -177,7 +177,7 @@ export default function Contact() {
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   {errorMsg && (
                     <div 
-                      className="p-4 bg-red-50 text-red-600 rounded-lg border border-red-100 text-sm font-medium"
+                      className="p-4 bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 rounded-lg border border-red-100 dark:border-red-950/30 text-sm font-medium"
                       role="alert"
                     >
                       {errorMsg}
@@ -189,7 +189,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-name" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
                       >
                         Your Name
                       </label>
@@ -206,7 +206,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-phone" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
                       >
                         Phone Number
                       </label>
@@ -227,7 +227,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-care-type" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
                       >
                         Care Required For
                       </label>
@@ -237,12 +237,12 @@ export default function Contact() {
                           value={careType}
                           onChange={(e) => setCareType(e.target.value)}
                           className={`w-full form-input appearance-none cursor-pointer ${
-                            careType ? 'text-[#0F172A]' : 'text-[#0F172A]/30'
+                            careType ? 'text-[#0F172A] dark:text-slate-100' : 'text-[#0F172A]/30 dark:text-slate-400/50'
                           }`}
                         >
                           <option value="" disabled hidden>Select care required...</option>
                           {form.servicesOptions.map((opt, oIdx) => (
-                            <option key={oIdx} value={opt} className="text-[#0F172A]">{opt}</option>
+                            <option key={oIdx} value={opt} className="text-[#0F172A] dark:text-slate-900">{opt}</option>
                           ))}
                         </select>
                       </div>
@@ -250,7 +250,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-shift" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
                       >
                         Preferred Shift
                       </label>
@@ -260,12 +260,12 @@ export default function Contact() {
                           value={shift}
                           onChange={(e) => setShift(e.target.value)}
                           className={`w-full form-input appearance-none cursor-pointer ${
-                            shift ? 'text-[#0F172A]' : 'text-[#0F172A]/30'
+                            shift ? 'text-[#0F172A] dark:text-slate-100' : 'text-[#0F172A]/30 dark:text-slate-400/50'
                           }`}
                         >
                           <option value="" disabled hidden>Select preferred shift...</option>
                           {form.shiftOptions.map((opt, oIdx) => (
-                            <option key={oIdx} value={opt} className="text-[#0F172A]">{opt}</option>
+                            <option key={oIdx} value={opt} className="text-[#0F172A] dark:text-slate-900">{opt}</option>
                           ))}
                         </select>
                       </div>
@@ -276,7 +276,7 @@ export default function Contact() {
                   <div>
                     <label 
                       htmlFor="contact-details" 
-                      className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 mb-2"
+                      className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
                     >
                       Additional Details
                     </label>
@@ -305,7 +305,7 @@ export default function Contact() {
                     )}
                   </button>
                   
-                  <p className="text-center text-xs text-[#0F172A]/25 mt-4">
+                  <p className="text-center text-xs text-[#0F172A]/25 dark:text-slate-500 mt-4">
                     {form.footerNote}
                   </p>
                 </form>

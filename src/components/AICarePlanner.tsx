@@ -110,17 +110,17 @@ export default function AICarePlanner() {
   return (
     <section 
       aria-labelledby="ai-planner-title"
-      className="bg-white rounded-2xl p-8 md:p-12 border border-[#0F172A]/5 max-w-4xl mx-auto mb-20 relative"
+      className="bg-white dark:bg-[#161F30] rounded-2xl p-8 md:p-12 border border-[#0F172A]/5 dark:border-white/5 hover:border-[#C4A882]/20 dark:hover:border-[#C4A882]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] max-w-4xl mx-auto mb-20 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       <div className="relative z-10">
         
         {/* Title */}
         <div className="flex items-center gap-3 mb-4">
           <Sparkles className="w-5 h-5 text-[#C4A882]" />
-          <h3 id="ai-planner-title" className="heading-serif text-2xl font-bold text-[#0F172A]">{aiPlanner.title}</h3>
+          <h3 id="ai-planner-title" className="heading-serif text-2xl font-bold text-[#0F172A] dark:text-slate-100">{aiPlanner.title}</h3>
         </div>
         
-        <p className="text-[#0F172A]/50 mb-8 max-w-2xl leading-relaxed">
+        <p className="text-[#0F172A]/50 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed">
           {aiPlanner.description}
         </p>
         
@@ -157,23 +157,23 @@ export default function AICarePlanner() {
         {/* Results Showcase */}
         {carePlan && (
           <div 
-            className="bg-[#FAF6F0] border border-[#0F172A]/5 rounded-xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+            className="bg-[#FAF6F0] dark:bg-[#0B0F19] border border-[#0F172A]/5 dark:border-white/5 rounded-xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
           >
-            <h4 className="heading-serif text-xl font-bold text-[#0F172A] mb-2">{carePlan.title}</h4>
-            <p className="text-[#0F172A]/50 mb-6 italic">{carePlan.intro}</p>
+            <h4 className="heading-serif text-xl font-bold text-[#0F172A] dark:text-slate-100 mb-2">{carePlan.title}</h4>
+            <p className="text-[#0F172A]/50 dark:text-slate-400 mb-6 italic">{carePlan.intro}</p>
             
             <div className="space-y-3">
               {carePlan.schedule.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-white rounded-lg border border-[#0F172A]/5"
+                  className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-white dark:bg-[#1E293B]/40 rounded-lg border border-[#0F172A]/5 dark:border-white/5"
                 >
                   <div className="min-w-[140px] font-medium text-[#C4A882] text-sm mt-0.5">
                     {item.timeOfDay}
                   </div>
                   <div>
-                    <h5 className="font-semibold text-[#0F172A] text-sm mb-1">{item.task}</h5>
-                    <p className="text-[#0F172A]/45 text-sm leading-relaxed">{item.description}</p>
+                    <h5 className="font-semibold text-[#0F172A] dark:text-slate-100 text-sm mb-1">{item.task}</h5>
+                    <p className="text-[#0F172A]/45 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

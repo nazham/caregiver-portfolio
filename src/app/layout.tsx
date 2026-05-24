@@ -36,8 +36,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased bg-[#FAF6F0] text-[#0F172A] selection:bg-[#C4A882]/20 selection:text-[#0F172A]">
+    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (_) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="font-sans antialiased bg-[#FAF6F0] text-[#0F172A] selection:bg-[#C4A882]/20 selection:text-[#0F172A] dark:bg-[#0B0F19] dark:text-slate-100 dark:selection:bg-[#C4A882]/30 dark:selection:text-slate-100 transition-colors duration-300">
         {children}
       </body>
     </html>
