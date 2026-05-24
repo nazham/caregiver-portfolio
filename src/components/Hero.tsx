@@ -9,9 +9,9 @@ export default function Hero() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'ShieldCheck':
-        return <ShieldCheck className="w-5 h-5 text-emerald-500" />;
+        return <ShieldCheck className="w-4 h-4 text-[#C4A882]" />;
       case 'Clock':
-        return <Clock className="w-5 h-5 text-blue-500" />;
+        return <Clock className="w-4 h-4 text-[#C4A882]" />;
       default:
         return null;
     }
@@ -20,38 +20,27 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50"
+      className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-[#FAFAFA]"
     >
-      {/* Background decorative gradient blur elements */}
-      <div 
-        className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none" 
-        aria-hidden="true"
-      />
-      <div 
-        className="absolute bottom-0 left-0 -ml-20 w-[400px] h-[400px] bg-teal-50 rounded-full blur-3xl opacity-60 pointer-events-none" 
-        aria-hidden="true"
-      />
-
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
           {/* Hero Content */}
-          <div className="max-w-2xl">
+          <div className="max-w-xl">
+            {/* Understated availability badge */}
             <div 
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0F172A]/10 text-[#0F172A]/60 text-xs font-medium uppercase tracking-wider mb-8"
             >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600"></span>
-              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C4A882]"></span>
               {hero.badgeText}
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
-              {hero.title} <span className="text-blue-600 block sm:inline">{hero.titleHighlight}</span>
+            <h1 className="heading-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#0F172A] leading-[1.1] mb-6">
+              {hero.title}{' '}
+              <span className="text-[#C4A882]">{hero.titleHighlight}</span>
             </h1>
             
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-[#0F172A]/55 mb-10 leading-relaxed max-w-md">
               {hero.subtitle}
             </p>
             
@@ -59,20 +48,20 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#contact" 
-                className="btn-dark px-8 py-4"
+                className="btn-primary px-8 py-4 rounded-lg"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-light px-8 py-4"
+                className="btn-secondary px-8 py-4 rounded-lg"
               >
                 {hero.ctaSecondary}
               </a>
             </div>
 
             {/* Micro Badges */}
-            <div className="mt-10 flex items-center gap-6 text-sm text-slate-500 font-medium border-t border-slate-200 pt-6">
+            <div className="mt-12 flex items-center gap-8 text-xs text-[#0F172A]/40 font-medium uppercase tracking-wider border-t border-[#0F172A]/5 pt-8">
               {hero.bullets.map((bullet, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   {getIcon(bullet.iconName)}
@@ -82,34 +71,27 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Hero Portrait Image */}
+          {/* Hero Portrait Image — Clean, minimal frame */}
           <div className="relative mx-auto lg:ml-auto w-full max-w-md">
-            <div 
-              className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-teal-400 rounded-3xl transform rotate-3 scale-105 opacity-20 blur-lg" 
-              aria-hidden="true"
-            />
-            <div className="relative bg-white p-2 rounded-3xl shadow-2xl border border-white/50">
+            <div className="relative bg-white p-1.5 rounded-2xl border border-[#0F172A]/5">
               <Image 
                 src={personalInfo.profileImage} 
                 alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
                 width={500}
                 height={500}
-                className="w-full aspect-[4/5] rounded-2xl object-cover object-top bg-slate-100"
+                className="w-full aspect-[4/5] rounded-xl object-cover object-top bg-[#F5F0EB]"
                 priority={true} // Informs Next.js to preload and assign high priority (LCP)
               />
-              
-              {/* Certification Floating Badge */}
-              <div 
-                className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 animate-bounce" 
-                style={{ animationDuration: '3s' }}
-              >
-                <div className="bg-amber-100 p-3 rounded-full">
-                  <Award className="w-6 h-6 text-amber-600" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 font-medium">Certified Professional</p>
-                  <p className="text-sm font-bold text-slate-900">120+ Hrs Training</p>
-                </div>
+            </div>
+
+            {/* Subtle credential tag — no bounce, positioned bottom-left */}
+            <div 
+              className="absolute -bottom-4 -left-4 bg-white px-5 py-3 rounded-xl border border-[#0F172A]/5 flex items-center gap-3"
+            >
+              <Award className="w-5 h-5 text-[#C4A882]" />
+              <div>
+                <p className="text-[10px] text-[#0F172A]/40 font-medium uppercase tracking-wider">Certified Professional</p>
+                <p className="text-sm font-semibold text-[#0F172A]">120+ Hrs Training</p>
               </div>
             </div>
           </div>

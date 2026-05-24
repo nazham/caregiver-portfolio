@@ -6,73 +6,51 @@ import DocumentCard from './DocumentCard';
 export default function Credentials() {
   const { credentials, documents } = portfolioContent;
 
-  const getCardIcon = (index: number) => {
-    // Return blue Award icon for first cert, teal for second
-    if (index === 0) {
-      return <Award className="w-8 h-8 text-blue-400" />;
-    }
-    return <Award className="w-8 h-8 text-teal-400" />;
-  };
-
   return (
     <section 
       id="credentials" 
-      className="section-padding bg-slate-900 text-white relative overflow-hidden"
+      className="section-padding bg-[#0F172A] text-white relative overflow-hidden"
     >
-      {/* Subtle background visual pattern */}
-      <div 
-        className="absolute inset-0 opacity-5 pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', 
-          backgroundSize: '32px 32px' 
-        }} 
-        aria-hidden="true"
-      />
-      
       <div className="container-custom relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div 
-            className="inline-flex items-center gap-2 px-3 py-1 bg-slate-800 rounded-full text-slate-300 text-sm font-medium mb-4 border border-slate-700"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full text-white/50 text-xs font-medium uppercase tracking-wider mb-5 border border-white/10"
           >
-            <ShieldCheck className="w-4 h-4 text-emerald-400" /> 
+            <ShieldCheck className="w-3.5 h-3.5 text-[#C4A882]" /> 
             {credentials.badgeText}
           </div>
-          <h2 className="text-3xl font-bold mb-4">{credentials.title}</h2>
-          <p className="text-slate-400">{credentials.description}</p>
+          <h2 className="heading-serif text-3xl sm:text-4xl font-bold mb-4">{credentials.title}</h2>
+          <p className="text-white/40 leading-relaxed">{credentials.description}</p>
         </div>
 
         {/* Credentials Cards Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {credentials.certifications.map((cert, index) => (
             <article 
               key={index} 
-              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-3xl hover:bg-slate-800 transition-colors duration-300 group"
+              className="bg-white/[0.03] border border-white/10 p-8 rounded-2xl hover:border-[#C4A882]/30 transition-colors duration-300 group"
             >
               <div className="flex items-start justify-between mb-8">
                 <div 
-                  className="bg-white/10 p-3 rounded-2xl group-hover:scale-110 transition-transform duration-300"
+                  className="bg-white/5 p-3 rounded-xl group-hover:bg-[#C4A882]/10 transition-colors duration-300"
                 >
-                  {getCardIcon(index)}
+                  <Award className="w-7 h-7 text-[#C4A882]" />
                 </div>
                 <span 
-                  className={`text-xs font-bold px-3 py-1 rounded-full border ${
+                  className={`text-xs font-semibold px-3 py-1 rounded-full border ${
                     cert.isActive 
-                      ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' 
-                      : 'bg-slate-700 text-slate-300 border-slate-600'
+                      ? 'bg-[#C4A882]/10 text-[#C4A882] border-[#C4A882]/20' 
+                      : 'bg-white/5 text-white/40 border-white/10'
                   }`}
                 >
                   {cert.badge}
                 </span>
               </div>
               
-              <h3 className="text-2xl font-bold mb-2">{cert.title}</h3>
-              <p 
-                className={`font-medium mb-6 ${
-                  index === 0 ? 'text-blue-400' : 'text-teal-400'
-                }`}
-              >
+              <h3 className="heading-serif text-2xl font-bold mb-2">{cert.title}</h3>
+              <p className="font-medium mb-6 text-[#C4A882]/80">
                 {cert.subtitle}
               </p>
               
@@ -81,15 +59,15 @@ export default function Credentials() {
                 {cert.details.map((detail, dIdx) => (
                   <div 
                     key={dIdx} 
-                    className="flex justify-between items-baseline border-b border-slate-700/50 pb-3 last:border-b-0 last:pb-0 last:pt-1"
+                    className="flex justify-between items-baseline border-b border-white/5 pb-3 last:border-b-0 last:pb-0 last:pt-1"
                   >
-                    <span className="text-slate-400 text-sm">{detail.label}</span>
-                    <span className="text-sm font-medium text-right text-slate-200">
+                    <span className="text-white/30 text-sm">{detail.label}</span>
+                    <span className="text-sm font-medium text-right text-white/70">
                       {detail.value}
                       {detail.subValue && (
                         <>
                           <br />
-                          <span className="text-slate-500 text-xs font-normal">{detail.subValue}</span>
+                          <span className="text-white/25 text-xs font-normal">{detail.subValue}</span>
                         </>
                       )}
                     </span>
@@ -101,13 +79,13 @@ export default function Credentials() {
         </div>
 
         {/* Downloadable Documents Grid */}
-        <div className="mt-20 pt-20 border-t border-slate-800/80">
+        <div className="mt-20 pt-20 border-t border-white/5">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h3 className="text-2xl font-bold mb-3 text-white">Downloadable Documents</h3>
-            <p className="text-slate-400 text-sm">Verified document copies available for immediate review.</p>
+            <h3 className="heading-serif text-2xl font-bold mb-3 text-white">Downloadable Documents</h3>
+            <p className="text-white/35 text-sm">Verified document copies available for immediate review.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {documents.map((doc, index) => (
               <DocumentCard
                 key={index}

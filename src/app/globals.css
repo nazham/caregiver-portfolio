@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), "Playfair Display", ui-serif, Georgia, serif;
 }
 
 @layer base {
@@ -10,14 +11,24 @@
   }
 }
 
-/* Custom Reusable Component/Utility Classes using Tailwind @apply */
+/* ── Design System: Premium Agency Aesthetic ── */
+/* Palette: Cream #FAFAFA · Navy #0F172A · Warm Sand #C4A882 */
+
+/* Layout */
 
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 .section-padding {
-  @apply py-24;
+  @apply py-24 lg:py-32;
+}
+
+/* Typography */
+
+.heading-serif {
+  font-family: var(--font-serif);
+  @apply tracking-tight;
 }
 
 .section-header {
@@ -25,30 +36,34 @@
 }
 
 .section-title {
-  @apply text-3xl font-bold mb-4;
+  font-family: var(--font-serif);
+  @apply text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-[#0F172A];
 }
 
 .section-subtitle {
-  @apply text-slate-600;
+  @apply text-[#0F172A]/60 leading-relaxed;
 }
 
-.btn-blue {
-  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg disabled:bg-blue-300 disabled:cursor-not-allowed;
+/* Buttons */
+
+.btn-primary {
+  @apply bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
-.btn-dark {
-  @apply bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl text-center cursor-pointer disabled:bg-slate-700 disabled:cursor-not-allowed;
+.btn-secondary {
+  @apply bg-transparent hover:bg-[#0F172A]/5 border border-[#0F172A]/20 text-[#0F172A] font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-center cursor-pointer;
 }
 
-.btn-light {
-  @apply bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 text-center cursor-pointer;
+.btn-accent {
+  @apply bg-[#C4A882] hover:bg-[#B89B75] text-white font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer;
 }
 
-.btn-outline-slate {
-  @apply py-2.5 px-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 text-slate-200 hover:text-white text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm;
+.btn-outline-light {
+  @apply py-2.5 px-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white text-sm font-semibold rounded-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer;
 }
+
+/* Form */
 
 .form-input {
-  @apply px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-slate-50 focus:bg-white text-slate-800 placeholder-slate-400;
+  @apply px-4 py-3 rounded-lg border border-[#0F172A]/10 focus:ring-2 focus:ring-[#C4A882]/50 focus:border-[#C4A882] outline-none transition-all duration-200 bg-white text-[#0F172A] placeholder-[#0F172A]/30;
 }
-

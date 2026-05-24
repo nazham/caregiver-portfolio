@@ -23,20 +23,21 @@ export default function About() {
   return (
     <section id="about" className="section-padding bg-white relative">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
           
           {/* Bio Column (60% width on desktop) */}
-          <article className="lg:col-span-3 space-y-6">
+          <article className="lg:col-span-3 space-y-8">
             <div>
-              <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">{about.title}</h2>
-              <div className="w-16 h-1 bg-blue-600 rounded-full mt-3" aria-hidden="true"></div>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#C4A882] mb-3">About Me</p>
+              <h2 className="heading-serif text-3xl sm:text-4xl font-bold text-[#0F172A]">{about.title}</h2>
+              <div className="w-12 h-px bg-[#C4A882] mt-5" aria-hidden="true"></div>
             </div>
             
-            <div className="space-y-6 text-slate-600 text-base leading-relaxed font-medium">
+            <div className="space-y-6 text-[#0F172A]/55 text-base leading-[1.8]">
               {about.bioParagraphs.map((paragraph, idx) => (
                 <p 
                   key={idx} 
-                  className={idx === 0 ? "text-lg text-slate-800 font-semibold border-l-4 border-blue-500 pl-4 py-1" : ""}
+                  className={idx === 0 ? "text-lg text-[#0F172A]/75 font-medium border-l-2 border-[#C4A882] pl-5 py-1 leading-[1.7]" : ""}
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
@@ -45,19 +46,19 @@ export default function About() {
           
           {/* Values Cards Column (40% width on desktop) */}
           <aside className="lg:col-span-2 space-y-6" aria-labelledby="principles-title">
-            <h3 id="principles-title" className="text-sm font-bold uppercase tracking-wider text-slate-400">My Care Principles</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+            <h3 id="principles-title" className="text-xs font-medium uppercase tracking-[0.2em] text-[#0F172A]/30">My Care Principles</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
               {about.values.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow duration-300 flex gap-4 items-start"
+                  className="bg-[#FAFAFA] p-5 rounded-xl border border-[#0F172A]/5 flex gap-4 items-start transition-colors duration-300 hover:border-[#C4A882]/30"
                 >
-                  <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100 shrink-0">
-                    {getIcon(item.iconName, `w-6 h-6 ${item.color}`)}
+                  <div className="bg-white p-2.5 rounded-lg border border-[#0F172A]/5 shrink-0">
+                    {getIcon(item.iconName, 'w-5 h-5 text-[#C4A882]')}
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-sm text-slate-650 leading-relaxed">{item.description}</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-1 text-sm">{item.title}</h4>
+                    <p className="text-sm text-[#0F172A]/45 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

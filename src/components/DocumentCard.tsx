@@ -16,10 +16,10 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath }: Docume
 
   return (
     <article 
-      className="group bg-slate-800/30 backdrop-blur-sm border border-slate-800 hover:border-slate-700 rounded-3xl overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full"
+      className="group bg-white/[0.03] border border-white/10 hover:border-[#C4A882]/30 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 flex flex-col h-full"
     >
       {/* Thumbnail Cover */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-850">
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
         <Image 
           src={thumbPath}
           alt={`${title} Thumbnail`}
@@ -30,50 +30,50 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath }: Docume
         />
         {/* Soft Overlay */}
         <div 
-          className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" 
+          className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-transparent to-transparent pointer-events-none" 
           aria-hidden="true"
         />
       </div>
 
       {/* Info Content */}
-      <div className="p-6 flex-1 flex flex-col justify-between">
+      <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
           {/* Document Type Badge */}
           <span 
-            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border ${
+            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border ${
               isResume 
-                ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' 
-                : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                ? 'bg-[#C4A882]/10 text-[#C4A882] border-[#C4A882]/20' 
+                : 'bg-white/5 text-white/50 border-white/10'
             }`}
           >
             {type}
           </span>
 
           {/* Document Title */}
-          <h4 className="text-lg font-bold text-white mt-3 leading-snug line-clamp-2">
+          <h4 className="text-base font-semibold text-white mt-3 leading-snug line-clamp-2">
             {title}
           </h4>
         </div>
 
         {/* Action Buttons bar */}
-        <div className="flex items-center gap-3 mt-6">
+        <div className="flex items-center gap-3 mt-5">
           <a 
             href={pdfPath}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 btn-outline-slate"
+            className="flex-1 btn-outline-light"
           >
             <span>View</span>
-            <ExternalLink className="w-4 h-4" />
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
           
           <a 
             href={pdfPath}
             download
-            className="btn-blue py-2.5 px-4 rounded-xl text-sm"
+            className="btn-accent py-2.5 px-4 rounded-lg text-sm"
             aria-label={`Download ${title}`}
           >
-            <Download className="w-4 h-4" />
+            <Download className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>

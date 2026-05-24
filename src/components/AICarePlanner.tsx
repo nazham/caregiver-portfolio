@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Sparkles, Activity, Loader2 } from 'lucide-react';
+import { Sparkles, Loader2 } from 'lucide-react';
 import { portfolioContent } from '@/data/portfolio-content';
 
 interface ScheduleItem {
@@ -110,24 +110,17 @@ export default function AICarePlanner() {
   return (
     <section 
       aria-labelledby="ai-planner-title"
-      className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 max-w-4xl mx-auto mb-20 relative overflow-hidden"
+      className="bg-white rounded-2xl p-8 md:p-12 border border-[#0F172A]/5 max-w-4xl mx-auto mb-20 relative"
     >
-      {/* Decorative Background Icon */}
-      <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none" aria-hidden="true">
-        <Activity className="w-48 h-48 text-blue-600" />
-      </div>
-      
       <div className="relative z-10">
         
         {/* Title */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-blue-100 p-2 rounded-xl">
-            <Sparkles className="w-6 h-6 text-blue-600" />
-          </div>
-          <h3 id="ai-planner-title" className="text-2xl font-bold text-slate-900">{aiPlanner.title}</h3>
+          <Sparkles className="w-5 h-5 text-[#C4A882]" />
+          <h3 id="ai-planner-title" className="heading-serif text-2xl font-bold text-[#0F172A]">{aiPlanner.title}</h3>
         </div>
         
-        <p className="text-slate-600 mb-6 max-w-2xl">
+        <p className="text-[#0F172A]/50 mb-8 max-w-2xl leading-relaxed">
           {aiPlanner.description}
         </p>
         
@@ -145,7 +138,7 @@ export default function AICarePlanner() {
           <button 
             onClick={handleGenerate}
             disabled={loading || !careNeeds.trim()}
-            className="btn-blue px-6 py-4 rounded-xl min-w-[200px]"
+            className="btn-primary px-6 py-4 rounded-lg min-w-[200px]"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : `✨ ${aiPlanner.ctaText}`}
           </button>
@@ -154,7 +147,7 @@ export default function AICarePlanner() {
         {/* Error Messages (if any) */}
         {error && (
           <div 
-            className="p-4 bg-red-50 text-red-600 rounded-xl mb-4 border border-red-100 text-sm"
+            className="p-4 bg-red-50 text-red-600 rounded-lg mb-4 border border-red-100 text-sm"
             role="alert"
           >
             {error}
@@ -164,23 +157,23 @@ export default function AICarePlanner() {
         {/* Results Showcase */}
         {carePlan && (
           <div 
-            className="bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+            className="bg-[#FAFAFA] border border-[#0F172A]/5 rounded-xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
           >
-            <h4 className="text-xl font-bold text-slate-900 mb-2">{carePlan.title}</h4>
-            <p className="text-slate-600 mb-6 italic">{carePlan.intro}</p>
+            <h4 className="heading-serif text-xl font-bold text-[#0F172A] mb-2">{carePlan.title}</h4>
+            <p className="text-[#0F172A]/50 mb-6 italic">{carePlan.intro}</p>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               {carePlan.schedule.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100"
+                  className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-white rounded-lg border border-[#0F172A]/5"
                 >
-                  <div className="min-w-[140px] font-semibold text-blue-600 text-sm mt-0.5">
+                  <div className="min-w-[140px] font-medium text-[#C4A882] text-sm mt-0.5">
                     {item.timeOfDay}
                   </div>
                   <div>
-                    <h5 className="font-bold text-slate-850 text-sm mb-1">{item.task}</h5>
-                    <p className="text-slate-650 text-sm">{item.description}</p>
+                    <h5 className="font-semibold text-[#0F172A] text-sm mb-1">{item.task}</h5>
+                    <p className="text-[#0F172A]/45 text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

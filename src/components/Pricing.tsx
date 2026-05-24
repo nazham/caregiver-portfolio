@@ -11,15 +11,16 @@ export default function Pricing() {
   const activePlan = pricing.options[pricingTab];
 
   const getFeatureIcon = (idx: number) => {
+    const iconClass = "w-4 h-4 text-[#0F172A]/30 shrink-0";
     switch (idx) {
       case 0:
-        return <Clock className="w-5 h-5 text-slate-400 shrink-0" />;
+        return <Clock className={iconClass} />;
       case 1:
-        return <Heart className="w-5 h-5 text-slate-400 shrink-0" />;
+        return <Heart className={iconClass} />;
       case 2:
-        return <Calendar className="w-5 h-5 text-slate-400 shrink-0" />;
+        return <Calendar className={iconClass} />;
       default:
-        return <Clock className="w-5 h-5 text-slate-400 shrink-0" />;
+        return <Clock className={iconClass} />;
     }
   };
 
@@ -29,29 +30,29 @@ export default function Pricing() {
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto"
+          className="bg-[#FAFAFA] border border-[#0F172A]/5 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900">{pricing.title}</h3>
-              <p className="text-slate-500 mt-1">{pricing.description}</p>
+              <h3 className="heading-serif text-2xl font-bold text-[#0F172A]">{pricing.title}</h3>
+              <p className="text-[#0F172A]/45 mt-1">{pricing.description}</p>
             </div>
             
             {/* Sliding Toggle Control */}
-            <div className="bg-slate-200/70 p-1 rounded-xl inline-flex relative border border-slate-200">
+            <div className="bg-[#0F172A]/5 p-1 rounded-lg inline-flex relative border border-[#0F172A]/5">
               <button 
                 onClick={() => setPricingTab('day')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer ${
-                  pricingTab === 'day' ? 'text-blue-900' : 'text-slate-500 hover:text-slate-700'
+                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
+                  pricingTab === 'day' ? 'text-[#0F172A]' : 'text-[#0F172A]/40 hover:text-[#0F172A]/60'
                 }`}
               >
                 Day Visit
               </button>
               <button 
                 onClick={() => setPricingTab('night')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer ${
-                  pricingTab === 'night' ? 'text-blue-900' : 'text-slate-500 hover:text-slate-700'
+                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
+                  pricingTab === 'night' ? 'text-[#0F172A]' : 'text-[#0F172A]/40 hover:text-[#0F172A]/60'
                 }`}
               >
                 Night Visit
@@ -59,7 +60,7 @@ export default function Pricing() {
               
               {/* Sliding Background indicator */}
               <div 
-                className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white rounded-lg shadow-sm transition-transform duration-300 ease-out"
+                className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white rounded-md border border-[#0F172A]/5 transition-transform duration-300 ease-out"
                 style={{ 
                   transform: pricingTab === 'day' 
                     ? 'translateX(4px)' 
@@ -76,44 +77,38 @@ export default function Pricing() {
             <div className="order-2 md:order-1">
               <ul className="space-y-4">
                 {activePlan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-slate-650 font-medium">
+                  <li key={idx} className="flex items-center gap-3 text-[#0F172A]/55 font-medium text-sm">
                     {getFeatureIcon(idx)}
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-slate-400 mt-6 leading-relaxed">
+              <p className="text-xs text-[#0F172A]/30 mt-6 leading-relaxed">
                 {pricing.disclaimer}
               </p>
             </div>
             
             {/* Rates Card Column */}
             <article 
-              className="order-1 md:order-2 bg-slate-900 rounded-2xl p-8 text-center shadow-lg relative overflow-hidden text-white"
+              className="order-1 md:order-2 bg-[#0F172A] rounded-xl p-8 text-center relative overflow-hidden text-white"
             >
-              {/* Decorative Glow */}
-              <div 
-                className="absolute top-0 right-0 -mr-10 -mt-10 w-32 h-32 bg-blue-500 rounded-full blur-2xl opacity-20 pointer-events-none" 
-                aria-hidden="true"
-              />
-              
-              <h4 className="text-slate-300 font-medium mb-2">
+              <h4 className="text-white/50 font-medium mb-2 text-sm">
                 {pricingTab === 'day' ? 'Daytime Rate' : 'Overnight Rate'}
               </h4>
               
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-xl font-semibold text-blue-400">{activePlan.currency}</span>
+                <span className="text-xl font-semibold text-[#C4A882]">{activePlan.currency}</span>
                 <span className="text-5xl font-extrabold tracking-tight">
                   {activePlan.rate}
                 </span>
               </div>
-              <span className="text-slate-400 text-sm mt-1 block">
+              <span className="text-white/40 text-sm mt-1 block">
                 {activePlan.period}
               </span>
               
               <a 
                 href="#contact" 
-                className="btn-blue w-full mt-8 py-3 px-6 rounded-xl block text-center"
+                className="btn-accent w-full mt-8 py-3 px-6 rounded-lg block text-center"
               >
                 Request this shift
               </a>

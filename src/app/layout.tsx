@@ -1,16 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-serif",
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const viewport: Viewport = {
-  themeColor: "#2563eb",
+  themeColor: "#0F172A",
   width: "device-width",
   initialScale: 1,
 };
@@ -29,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable}`}>
-      <body className="font-sans antialiased bg-slate-50 text-slate-900 selection:bg-blue-200 selection:text-blue-900">
+    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased bg-[#FAFAFA] text-[#0F172A] selection:bg-[#C4A882]/20 selection:text-[#0F172A]">
         {children}
       </body>
     </html>
