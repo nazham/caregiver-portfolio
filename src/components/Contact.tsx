@@ -52,15 +52,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="section-padding bg-white relative">
+      <div className="container-custom">
         
         {/* Main Banner Block */}
         <div className="bg-blue-600 rounded-[2.5rem] overflow-hidden shadow-2xl">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
-            <div className="lg:col-span-2 p-10 md:p-12 text-white bg-blue-700 relative overflow-hidden">
+            <aside className="lg:col-span-2 p-10 md:p-12 text-white bg-blue-700 relative overflow-hidden">
               {/* Decorative Circle Background element */}
               <div 
                 className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-blue-500 rounded-full blur-3xl opacity-50 pointer-events-none" 
@@ -132,7 +132,7 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
+            </aside>
 
             {/* Form Column */}
             <div className="lg:col-span-3 p-10 md:p-12 bg-white flex flex-col justify-center">
@@ -190,7 +190,7 @@ export default function Contact() {
                         onChange={(e) => setName(e.target.value)}
                         placeholder="John Doe"
                         autoComplete="name"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-slate-50 focus:bg-white text-slate-800"
+                        className="w-full form-input"
                       />
                     </div>
                     <div>
@@ -207,7 +207,7 @@ export default function Contact() {
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="+94 77 123 4567"
                         autoComplete="tel"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-slate-50 focus:bg-white text-slate-800"
+                        className="w-full form-input"
                       />
                     </div>
                   </div>
@@ -226,7 +226,7 @@ export default function Contact() {
                           id="contact-care-type"
                           value={careType}
                           onChange={(e) => setCareType(e.target.value)}
-                          className={`w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-slate-50 focus:bg-white appearance-none cursor-pointer ${
+                          className={`w-full form-input appearance-none cursor-pointer ${
                             careType ? 'text-slate-800' : 'text-slate-400'
                           }`}
                         >
@@ -249,7 +249,7 @@ export default function Contact() {
                           id="contact-shift"
                           value={shift}
                           onChange={(e) => setShift(e.target.value)}
-                          className={`w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-slate-50 focus:bg-white appearance-none cursor-pointer ${
+                          className={`w-full form-input appearance-none cursor-pointer ${
                             shift ? 'text-slate-800' : 'text-slate-400'
                           }`}
                         >
@@ -276,7 +276,7 @@ export default function Contact() {
                       value={extraDetails}
                       onChange={(e) => setExtraDetails(e.target.value)}
                       placeholder="Briefly describe the current situation and any specific requirements..."
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-slate-50 focus:bg-white resize-none text-slate-800"
+                      className="w-full form-input resize-none"
                     />
                   </div>
 
@@ -284,7 +284,7 @@ export default function Contact() {
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer disabled:bg-slate-700"
+                    className="btn-dark w-full py-4 font-bold"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-5 h-5 animate-spin" />

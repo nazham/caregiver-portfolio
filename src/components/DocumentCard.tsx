@@ -15,7 +15,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath }: Docume
   const isResume = type.toLowerCase() === 'resume';
 
   return (
-    <div 
+    <article 
       className="group bg-slate-800/30 backdrop-blur-sm border border-slate-800 hover:border-slate-700 rounded-3xl overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full"
     >
       {/* Thumbnail Cover */}
@@ -61,7 +61,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath }: Docume
             href={pdfPath}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 py-2.5 px-4 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 text-slate-200 hover:text-white text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+            className="flex-1 btn-outline-slate"
           >
             <span>View</span>
             <ExternalLink className="w-4 h-4" />
@@ -70,13 +70,13 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath }: Docume
           <a 
             href={pdfPath}
             download
-            className="py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg"
+            className="btn-blue py-2.5 px-4 rounded-xl text-sm"
             aria-label={`Download ${title}`}
           >
             <Download className="w-4 h-4" />
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

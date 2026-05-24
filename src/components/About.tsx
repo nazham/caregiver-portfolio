@@ -21,12 +21,12 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="section-padding bg-white relative">
+      <div className="container-custom">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           
           {/* Bio Column (60% width on desktop) */}
-          <div className="lg:col-span-3 space-y-6">
+          <article className="lg:col-span-3 space-y-6">
             <div>
               <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">{about.title}</h2>
               <div className="w-16 h-1 bg-blue-600 rounded-full mt-3" aria-hidden="true"></div>
@@ -41,11 +41,11 @@ export default function About() {
                 />
               ))}
             </div>
-          </div>
+          </article>
           
           {/* Values Cards Column (40% width on desktop) */}
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400">My Care Principles</h3>
+          <aside className="lg:col-span-2 space-y-6" aria-labelledby="principles-title">
+            <h3 id="principles-title" className="text-sm font-bold uppercase tracking-wider text-slate-400">My Care Principles</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {about.values.map((item, idx) => (
                 <div 
@@ -62,7 +62,7 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </aside>
 
         </div>
       </div>

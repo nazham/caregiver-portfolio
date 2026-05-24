@@ -32,7 +32,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Hero Content */}
@@ -59,13 +59,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#contact" 
-                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl text-center"
+                className="btn-dark px-8 py-4"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 text-center"
+                className="btn-light px-8 py-4"
               >
                 {hero.ctaSecondary}
               </a>

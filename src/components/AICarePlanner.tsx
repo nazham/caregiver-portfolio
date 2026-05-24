@@ -108,7 +108,8 @@ export default function AICarePlanner() {
   };
 
   return (
-    <div 
+    <section 
+      aria-labelledby="ai-planner-title"
       className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 max-w-4xl mx-auto mb-20 relative overflow-hidden"
     >
       {/* Decorative Background Icon */}
@@ -123,7 +124,7 @@ export default function AICarePlanner() {
           <div className="bg-blue-100 p-2 rounded-xl">
             <Sparkles className="w-6 h-6 text-blue-600" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-900">{aiPlanner.title}</h3>
+          <h3 id="ai-planner-title" className="text-2xl font-bold text-slate-900">{aiPlanner.title}</h3>
         </div>
         
         <p className="text-slate-600 mb-6 max-w-2xl">
@@ -138,13 +139,13 @@ export default function AICarePlanner() {
             onChange={(e) => setCareNeeds(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}
             placeholder={aiPlanner.placeholder}
-            className="flex-1 px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-slate-50 focus:bg-white text-slate-800"
+            className="flex-1 form-input py-4 px-5"
             aria-label="Describe client care needs"
           />
           <button 
             onClick={handleGenerate}
             disabled={loading || !careNeeds.trim()}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed text-white px-6 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 min-w-[200px] cursor-pointer"
+            className="btn-blue px-6 py-4 rounded-xl min-w-[200px]"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : `✨ ${aiPlanner.ctaText}`}
           </button>
@@ -179,7 +180,7 @@ export default function AICarePlanner() {
                   </div>
                   <div>
                     <h5 className="font-bold text-slate-850 text-sm mb-1">{item.task}</h5>
-                    <p className="text-slate-600 text-sm">{item.description}</p>
+                    <p className="text-slate-650 text-sm">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -188,6 +189,6 @@ export default function AICarePlanner() {
         )}
 
       </div>
-    </div>
+    </section>
   );
 }

@@ -24,8 +24,8 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="section-padding bg-white">
+      <div className="container-custom">
         
         {/* Pricing Matrix Card */}
         <div 
@@ -88,7 +88,7 @@ export default function Pricing() {
             </div>
             
             {/* Rates Card Column */}
-            <div 
+            <article 
               className="order-1 md:order-2 bg-slate-900 rounded-2xl p-8 text-center shadow-lg relative overflow-hidden text-white"
             >
               {/* Decorative Glow */}
@@ -113,11 +113,11 @@ export default function Pricing() {
               
               <a 
                 href="#contact" 
-                className="w-full mt-8 bg-blue-600 hover:bg-blue-500 text-white py-3 px-6 rounded-xl font-semibold transition-colors duration-200 block text-center shadow-md hover:shadow-lg"
+                className="btn-blue w-full mt-8 py-3 px-6 rounded-xl block text-center"
               >
                 Request this shift
               </a>
-            </div>
+            </article>
 
           </div>
         </div>

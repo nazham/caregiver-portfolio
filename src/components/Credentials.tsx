@@ -17,7 +17,7 @@ export default function Credentials() {
   return (
     <section 
       id="credentials" 
-      className="py-24 bg-slate-900 text-white relative overflow-hidden"
+      className="section-padding bg-slate-900 text-white relative overflow-hidden"
     >
       {/* Subtle background visual pattern */}
       <div 
@@ -29,7 +29,7 @@ export default function Credentials() {
         aria-hidden="true"
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -46,7 +46,7 @@ export default function Credentials() {
         {/* Credentials Cards Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
           {credentials.certifications.map((cert, index) => (
-            <div 
+            <article 
               key={index} 
               className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-3xl hover:bg-slate-800 transition-colors duration-300 group"
             >
@@ -96,7 +96,7 @@ export default function Credentials() {
                   </div>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
