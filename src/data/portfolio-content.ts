@@ -32,6 +32,8 @@ export interface Certification {
 export interface ContactInfo {
   phone: string;
   phoneLabel: string;
+  whatsapp?: string;
+  whatsappLabel?: string;
   email: string;
   emailLabel: string;
   location: string;
@@ -149,8 +151,9 @@ export const portfolioContent: PortfolioContent = {
   about: {
     title: "About Me",
     bioParagraphs: [
-      "Hello, I am Mohamed Rifai Mohamed Isham. I specialize in providing premium, short-term home caregiving services.",
-      "My approach is rooted in compassion, dignity, and clinical precision. Whether recovering from surgery or needing dedicated daily assistance, I ensure my clients receive the highest standard of personalized care in the comfort of their own homes."
+      "My name is Mohamed Rifai Mohamed Isham, and I am a dedicated caregiver with a strong passion for providing compassionate, respectful, and professional care to individuals in need. I successfully completed a Diploma in Caregiving from Medicina Alternativa, affiliated with The Open International University for Complementary Medicines and Azteca University – North America in Colombo, Sri Lanka (2024).",
+      "I believe that quality caregiving is built on kindness, patience, trust, and dignity. My goal is to create a safe, supportive, and comfortable environment for every client while assisting with their daily needs and overall well-being. I am committed to treating each person with compassion, respect, and genuine care, just like family.",
+      "With my caregiving training and practical knowledge, I am prepared to support elderly individuals, patients recovering at home, and those who require personal assistance and companionship. I always strive to provide dependable and attentive care that improves the quality of life of the people I serve."
     ],
     values: [
       {
@@ -183,12 +186,19 @@ export const portfolioContent: PortfolioContent = {
     title: "Specialized Care Services",
     description: "Transparent, high-quality care tailored to your specific short-term needs.",
     list: [
-      "Post-Surgery Recovery",
-      "Elderly Assistance & Companionship",
-      "Mobility & Transfer Support",
-      "Medication Reminders",
-      "Vital Signs Monitoring",
-      "Personal Hygiene & Grooming"
+      "Elderly care and companionship",
+      "Medication reminders and health monitoring",
+      "Mobility and walking assistance",
+      "Meal preparation and feeding support",
+      "Bedridden patient care",
+      "Post-hospital recovery support",
+      "Assistance with daily living activities",
+      "Emotional support and companionship",
+      "Appointment and routine assistance",
+      "Home visit caregiving services",
+      "Support for individuals with special needs",
+      "Overnight and daytime caregiving support",
+      "Family support and patient supervision"
     ],
     aiPlanner: {
       title: "Visualize Your Care",
@@ -261,11 +271,13 @@ export const portfolioContent: PortfolioContent = {
     heading: "Let's discuss your care needs.",
     description: "Fill out the form to request a short-term visit, or reach out directly for urgent care requirements.",
     details: {
-      phone: "+94 (77) 123-4567",
-      phoneLabel: "Call / WhatsApp",
-      email: "isham.care@example.com",
-      emailLabel: "Email",
-      location: "Colombo & Suburbs, Sri Lanka",
+      phone: "+94 77 162 4774",
+      phoneLabel: "Primary Phone",
+      whatsapp: "+94 77 242 0800",
+      whatsappLabel: "WhatsApp",
+      email: "Supportivecaregiver.ae@gmail.com",
+      emailLabel: "Professional Email",
+      location: "Colombo and surrounding areas. Willing to travel to nearby cities and regions based on client needs and arrangements.",
       locationLabel: "Service Area"
     },
     form: {

@@ -21,39 +21,47 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           
-          {/* Bio Columns */}
-          <div className="md:col-span-1">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">{about.title}</h2>
-            <div className="w-20 h-1.5 bg-blue-600 rounded-full mb-6" aria-hidden="true"></div>
-            {about.bioParagraphs.map((paragraph, idx) => (
-              <p 
-                key={idx} 
-                className={`text-slate-600 leading-relaxed ${
-                  idx < about.bioParagraphs.length - 1 ? 'mb-6' : ''
-                }`}
-                dangerouslySetInnerHTML={{ __html: paragraph }} // Supports any bold text in data
-              />
-            ))}
+          {/* Bio Column (60% width on desktop) */}
+          <div className="lg:col-span-3 space-y-6">
+            <div>
+              <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">{about.title}</h2>
+              <div className="w-16 h-1 bg-blue-600 rounded-full mt-3" aria-hidden="true"></div>
+            </div>
+            
+            <div className="space-y-6 text-slate-600 text-base leading-relaxed font-medium">
+              {about.bioParagraphs.map((paragraph, idx) => (
+                <p 
+                  key={idx} 
+                  className={idx === 0 ? "text-lg text-slate-800 font-semibold border-l-4 border-blue-500 pl-4 py-1" : ""}
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
+            </div>
           </div>
           
-          {/* Values Cards Grid */}
-          <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
-            {about.values.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm mb-4 border border-slate-100">
-                  {getIcon(item.iconName, `w-6 h-6 ${item.color}`)}
+          {/* Values Cards Column (40% width on desktop) */}
+          <div className="lg:col-span-2 space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400">My Care Principles</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+              {about.values.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow duration-300 flex gap-4 items-start"
+                >
+                  <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100 shrink-0">
+                    {getIcon(item.iconName, `w-6 h-6 ${item.color}`)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
+                    <p className="text-sm text-slate-650 leading-relaxed">{item.description}</p>
+                  </div>
                 </div>
-                <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-600">{item.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
         </div>
