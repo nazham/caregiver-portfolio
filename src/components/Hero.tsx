@@ -106,7 +106,7 @@ export default function Hero() {
               <Award className="w-5 h-5 text-[#C4A882]" />
               <div>
                 <p className="text-[10px] text-[#0F172A]/40 font-medium uppercase tracking-wider">Certified Professional</p>
-                <p className="text-sm font-semibold text-[#0F172A]">120+ Hrs Training</p>
+                <p className="text-sm font-semibold text-[#0F172A]">Diploma in Caregiving</p>
               </div>
             </div>
           </div>
