@@ -44,7 +44,7 @@ export default function Header() {
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           isScrolled 
             ? 'bg-[#FAFAFA]/95 backdrop-blur-md border-b border-[#0F172A]/5 py-3' 
-            : 'bg-transparent py-6'
+            : 'bg-transparent py-3 md:py-6'
         }`}
       >
         <nav className="container-custom flex justify-between items-center">

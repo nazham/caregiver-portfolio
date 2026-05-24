@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative pt-20 pb-12 lg:pt-36 lg:pb-28 bg-[#FAF6F0]"
+      className="relative pt-16 pb-12 lg:pt-36 lg:pb-28 bg-[#FAF6F0]"
     >
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
