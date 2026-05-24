@@ -306,9 +306,9 @@ export const portfolioContent: PortfolioContent = {
       whatsappLabel: "WhatsApp",
       email: "Supportivecaregiver.ae@gmail.com",
       emailLabel: "Professional Email",
-      location: "Colombo and surrounding areas",
+      location: "All over Sri Lanka",
       locationLabel: "Service Area",
-      locationDetails: "Willing to travel to nearby cities and regions based on client needs and arrangements."
+      locationDetails: "Willing to travel to any city and region across Sri Lanka based on client needs and arrangements."
     },
     form: {
       servicesOptions: [
