@@ -20,48 +20,55 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-[#FAFAFA]"
+      className="relative pt-20 pb-12 lg:pt-36 lg:pb-28 bg-[#FAFAFA]"
     >
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           
-          {/* Hero Content */}
-          <div className="max-w-xl">
-            {/* Understated availability badge */}
+          {/* Hero Content — Second on mobile, first on desktop */}
+          <div className="max-w-xl order-2 lg:order-1 flex flex-col">
+            {/* Understated availability badge — Desktop only */}
             <div 
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0F172A]/10 text-[#0F172A]/60 text-xs font-medium uppercase tracking-wider mb-8"
+              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0F172A]/10 text-[#0F172A]/60 text-xs font-medium uppercase tracking-wider mb-8 self-start"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#C4A882]"></span>
               {hero.badgeText}
             </div>
             
-            <h1 className="heading-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#0F172A] leading-[1.1] mb-6">
-              {hero.title}{' '}
-              <span className="text-[#C4A882]">{hero.titleHighlight}</span>
+            <h1 className="heading-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#0F172A] leading-[1.1] mb-4 sm:mb-6 order-1">
+              {hero.title.includes('Professional, Compassionate') ? (
+                <>
+                  Professional, <br className="sm:hidden" /> Compassionate
+                </>
+              ) : (
+                hero.title
+              )}{' '}
+              <span className="text-[#C4A882] block">{hero.titleHighlight}</span>
             </h1>
             
-            <p className="text-base sm:text-lg text-[#0F172A]/55 mb-10 leading-relaxed max-w-md">
-              {hero.subtitle}
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons — Second on mobile, third on desktop */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-0 mb-6 lg:mb-8 order-2 lg:order-3">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-4 rounded-lg"
+                className="btn-primary px-8 py-3.5 rounded-lg text-center"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-secondary px-8 py-4 rounded-lg"
+                className="btn-secondary px-8 py-3.5 rounded-lg text-center"
               >
                 {hero.ctaSecondary}
               </a>
             </div>
 
-            {/* Micro Badges */}
-            <div className="mt-12 flex items-center gap-8 text-xs text-[#0F172A]/40 font-medium uppercase tracking-wider border-t border-[#0F172A]/5 pt-8">
+            {/* Subtitle — Third on mobile, second on desktop */}
+            <p className="text-sm sm:text-lg text-[#0F172A]/55 mb-4 lg:mb-10 leading-relaxed max-w-md order-3 lg:order-2">
+              {hero.subtitle}
+            </p>
+
+            {/* Micro Badges — Fourth on both mobile and desktop */}
+            <div className="mt-4 lg:mt-0 flex items-center gap-8 text-xs text-[#0F172A]/40 font-medium uppercase tracking-wider border-t border-[#0F172A]/5 pt-4 lg:pt-8 order-4">
               {hero.bullets.map((bullet, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   {getIcon(bullet.iconName)}
@@ -71,9 +78,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Hero Portrait Image — Clean, minimal frame */}
-          <div className="relative mx-auto lg:ml-auto w-full max-w-md">
-            <div className="relative bg-white p-1.5 rounded-2xl border border-[#0F172A]/5">
+          {/* Hero Portrait Image — First on mobile, second on desktop */}
+          <div className="relative mx-auto lg:ml-auto w-full max-w-md order-1 lg:order-2 flex flex-col">
+            {/* Understated availability badge — Mobile only */}
+            <div 
+              className="inline-flex lg:hidden items-center gap-2 px-3 py-1.5 rounded-full border border-[#0F172A]/10 text-[#0F172A]/60 text-xs font-medium uppercase tracking-wider mb-4 w-fit"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C4A882]"></span>
+              {hero.badgeText}
+            </div>
+
+            <div className="relative bg-white p-1.5 rounded-2xl border border-[#0F172A]/5 w-full">
               <Image 
                 src={personalInfo.profileImage} 
                 alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
