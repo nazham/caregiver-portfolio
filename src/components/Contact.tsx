@@ -60,7 +60,7 @@ export default function Contact() {
       // Execute redirection to WhatsApp Web / App
       window.open(`https://wa.me/${whatsappNum}?text=${encodeURIComponent(message)}`, '_blank');
       setIsSubmitted(true);
-    } catch (err) {
+    } catch {
       setErrorMsg('Could not redirect to WhatsApp automatically. Please contact me directly.');
     } finally {
       setIsSubmitting(false);

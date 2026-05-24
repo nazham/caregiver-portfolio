@@ -59,15 +59,15 @@ export default function Credentials() {
                 {cert.details.map((detail, dIdx) => (
                   <div 
                     key={dIdx} 
-                    className="flex justify-between items-baseline border-b border-white/5 pb-3 last:border-b-0 last:pb-0 last:pt-1"
+                    className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4 border-b border-white/5 pb-3 last:border-b-0 last:pb-0 last:pt-1"
                   >
-                    <span className="text-white/30 text-sm">{detail.label}</span>
-                    <span className="text-sm font-medium text-right text-white/70">
+                    <span className="text-white/30 text-sm shrink-0">{detail.label}</span>
+                    <span className="text-sm font-medium text-left sm:text-right text-white/70">
                       {detail.value}
                       {detail.subValue && (
                         <>
-                          <br />
-                          <span className="text-white/25 text-xs font-normal">{detail.subValue}</span>
+                          <br className="hidden sm:inline" />
+                          <span className="text-white/25 text-xs font-normal block sm:inline-block sm:mt-0.5">{detail.subValue}</span>
                         </>
                       )}
                     </span>

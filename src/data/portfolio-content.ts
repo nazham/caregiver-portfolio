@@ -254,7 +254,7 @@ export const portfolioContent: PortfolioContent = {
         subtitle: "Home Health Aide",
         details: [
           { label: "Issuing Body", value: "American Caregiver Association (ACA)", subValue: "The National Standard Since 1905" },
-          { label: "Course of Study", value: "120 Hours" },
+          { label: "Scope of Practice", value: "Home Health & Personal Care" },
           { label: "Certification No.", value: "20252234P" },
           { label: "Renewal Date", value: "April 28, 2026" }
         ],
