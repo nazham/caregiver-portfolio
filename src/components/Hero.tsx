@@ -20,22 +20,38 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative pt-16 pb-12 lg:pt-36 lg:pb-28 bg-primary-bg transition-colors duration-300"
+      className="relative pt-8 pb-8 sm:pt-20 lg:pt-36 lg:pb-28 bg-primary-bg transition-colors duration-300"
     >
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-20 lg:items-center">
           
-          {/* Hero Content — Second on mobile, first on desktop */}
-          <div className="max-w-xl order-2 lg:order-1 flex flex-col">
+          {/* Hero Content — Uses flexbox order for mobile-first CTA */}
+          <div className="max-w-xl lg:order-1 flex flex-col">
+            {/* Mobile-only CTA Buttons — FIRST visible content */}
+            <div className="lg:hidden flex flex-col gap-3 mb-6 order-first">
+              <a 
+                href="#contact" 
+                className="btn-primary px-6 py-3 rounded-full text-center text-sm font-semibold hover:shadow-lg hover:shadow-primary-text/10 transition-all duration-300"
+              >
+                {hero.ctaPrimary}
+              </a>
+              <a 
+                href="#credentials" 
+                className="btn-secondary px-6 py-3 rounded-full text-center text-sm font-semibold hover:bg-primary-text/10 transition-all duration-300"
+              >
+                {hero.ctaSecondary}
+              </a>
+            </div>
+
             {/* Understated availability badge — Desktop only */}
             <div 
-              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-border text-lead-text text-xs font-medium uppercase tracking-wider mb-8 self-start"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/20 text-accent text-xs font-semibold uppercase tracking-widest mb-6 self-start bg-accent/5"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
             
-            <h1 className="heading-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold text-primary-text leading-[1.1] mb-4 sm:mb-6 order-1">
+            <h1 className="heading-serif text-3xl sm:text-5xl lg:text-7xl font-bold text-primary-text leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6">
               {hero.title.includes('Professional, Compassionate') ? (
                 <>
                   Professional, <br className="sm:hidden" /> Compassionate
@@ -43,48 +59,48 @@ export default function Hero() {
               ) : (
                 hero.title
               )}{' '}
-              <span className="text-accent block">{hero.titleHighlight}</span>
+              <span className="text-accent">{hero.titleHighlight}</span>
             </h1>
             
-            {/* CTA Buttons — Second on mobile, third on desktop */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-0 mb-6 lg:mb-8 order-2 lg:order-3">
+            {/* Subtitle — Positioned early on mobile */}
+            <p className="text-sm sm:text-base lg:text-lg text-lead-text mb-6 sm:mb-8 leading-relaxed max-w-xl">
+              {hero.subtitle}
+            </p>
+ 
+            {/* Desktop CTA Buttons — visible only on desktop */}
+            <div className="hidden lg:flex flex-col sm:flex-row gap-4 pt-4 mb-8 lg:mb-10">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-3.5 rounded-lg text-center"
+                className="btn-primary px-8 py-4 rounded-full text-center text-sm font-semibold hover:shadow-lg hover:shadow-primary-text/10 transition-all duration-300"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-secondary px-8 py-3.5 rounded-lg text-center"
+                className="btn-secondary px-8 py-4 rounded-full text-center text-sm font-semibold hover:bg-primary-text/10 transition-all duration-300"
               >
                 {hero.ctaSecondary}
               </a>
             </div>
  
-            {/* Subtitle — Third on mobile, second on desktop */}
-            <p className="text-sm sm:text-lg text-lead-text mb-4 lg:mb-10 leading-relaxed max-w-md order-3 lg:order-2">
-              {hero.subtitle}
-            </p>
- 
-            {/* Micro Badges — Fourth on both mobile and desktop */}
-            <div className="mt-4 lg:mt-0 flex items-center gap-8 text-xs text-muted-text font-medium uppercase tracking-wider border-t border-light-border pt-4 lg:pt-8 order-4">
+            {/* Micro Badges — Bottom of content */}
+            <div className="mt-6 sm:mt-8 lg:mt-auto flex flex-wrap items-center gap-6 sm:gap-8 text-xs text-muted-text font-semibold uppercase tracking-wider border-t border-light-border pt-6 sm:pt-8">
               {hero.bullets.map((bullet, idx) => (
-                <div key={idx} className="flex items-center gap-2">
+                <div key={idx} className="flex items-center gap-2.5">
                    {getIcon(bullet.iconName)}
-                  <span>{bullet.text}</span>
+                  <span className="text-secondary-text text-xs">{bullet.text}</span>
                 </div>
               ))}
             </div>
           </div>
  
-          {/* Hero Portrait Image — First on mobile, second on desktop */}
-          <div className="relative mx-auto lg:ml-auto w-full max-w-md order-1 lg:order-2 flex flex-col">
+          {/* Hero Portrait Image — Below content on mobile, right column on desktop */}
+          <div className="relative mx-auto lg:ml-auto w-full max-w-sm sm:max-w-md lg:order-2 flex flex-col">
             {/* Understated availability badge — Mobile only */}
             <div 
-              className="inline-flex lg:hidden items-center gap-2 px-3 py-1.5 rounded-full border border-primary-border text-lead-text text-xs font-medium uppercase tracking-wider mb-4 w-fit"
+              className="inline-flex lg:hidden items-center gap-2 px-4 py-2 rounded-full border border-accent/20 text-accent text-xs font-semibold uppercase tracking-widest mb-4 w-fit bg-accent/5"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
  
@@ -95,18 +111,18 @@ export default function Hero() {
                 width={500}
                 height={500}
                 className="w-full aspect-[4/5] rounded-xl object-cover object-top bg-primary-bg"
-                priority={true} // Informs Next.js to preload and assign high priority (LCP)
+                priority={true}
               />
             </div>
  
             {/* Subtle credential tag — no bounce, positioned bottom-left */}
             <div 
-              className="absolute -bottom-4 -left-4 bg-secondary-bg px-5 py-3 rounded-xl border border-light-border dark:border-primary-border flex items-center gap-3"
+              className="absolute -bottom-4 -left-4 bg-secondary-bg px-5 py-3 sm:px-6 sm:py-4 rounded-xl border border-light-border dark:border-primary-border flex items-center gap-2.5 sm:gap-3 shadow-lg shadow-primary-text/5 hover:shadow-primary-text/10 transition-shadow duration-300"
             >
-              <Award className="w-5 h-5 text-accent" />
-              <div>
-                <p className="text-[10px] text-muted-text font-medium uppercase tracking-wider">Certified Professional</p>
-                <p className="text-sm font-semibold text-primary-text">Diploma in Caregiving</p>
+              <Award className="w-4 h-4 sm:w-5 sm:h-5 text-accent shrink-0" />
+              <div className="min-w-0">
+                <p className="text-[10px] sm:text-[11px] text-muted-text font-semibold uppercase tracking-widest">Certified</p>
+                <p className="text-xs sm:text-sm font-bold text-primary-text">Diploma in Caregiving</p>
               </div>
             </div>
           </div>

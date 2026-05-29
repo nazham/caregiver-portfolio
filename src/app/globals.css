@@ -78,7 +78,7 @@
 }
 
 .section-padding {
-  @apply py-24 lg:py-32;
+  @apply py-16 sm:py-24 lg:py-36;
 }
 
 /* Typography */
@@ -94,7 +94,7 @@
 
 .section-title {
   font-family: var(--font-serif);
-  @apply text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-primary-text;
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-primary-text leading-tight;
 }
 
 .section-subtitle {
@@ -104,15 +104,15 @@
 /* Buttons */
 
 .btn-primary {
-  @apply bg-primary-text hover:bg-secondary-text text-secondary-bg font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none;
+  @apply bg-primary-text hover:bg-secondary-text text-secondary-bg font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none hover:translate-y-[-2px] active:translate-y-0;
 }
 
 .btn-secondary {
-  @apply bg-transparent hover:bg-primary-text/5 border border-primary-text/20 text-primary-text font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 text-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none;
+  @apply bg-transparent hover:bg-primary-text/5 border border-primary-text/30 text-primary-text font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 text-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none hover:translate-y-[-2px] active:translate-y-0 hover:border-primary-text/50;
 }
 
 .btn-accent {
-  @apply bg-accent hover:bg-accent-hover text-secondary-bg font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-text dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none;
+  @apply bg-accent hover:bg-accent-hover text-secondary-bg font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-text dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none hover:translate-y-[-2px] active:translate-y-0;
 }
 
 .btn-outline-light {

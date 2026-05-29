@@ -14,29 +14,29 @@ export default function Credentials() {
       <div className="container-custom relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
           <div 
-            className="inline-flex items-center gap-2 px-3 py-1 bg-primary-text/5 rounded-full text-muted-text text-xs font-medium uppercase tracking-wider mb-5 border border-primary-border"
+            className="inline-flex items-center gap-2.5 px-4 py-2 bg-accent/5 rounded-full text-accent text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-6 border border-accent/20"
           >
-            <ShieldCheck className="w-3.5 h-3.5 text-accent" /> 
+            <ShieldCheck className="w-4 h-4" /> 
             {credentials.badgeText}
           </div>
-          <h2 className="heading-serif text-3xl sm:text-4xl font-bold mb-4 text-primary-text">{credentials.title}</h2>
-          <p className="text-lead-text leading-relaxed">{credentials.description}</p>
+          <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-primary-text leading-tight">{credentials.title}</h2>
+          <p className="text-lead-text text-base sm:text-lg leading-relaxed">{credentials.description}</p>
         </div>
 
         {/* Credentials Cards Grid */}
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
           {credentials.certifications.map((cert, index) => (
             <article 
               key={index} 
-              className="bg-secondary-bg border border-primary-border dark:border-light-border p-8 rounded-2xl hover:border-accent/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group motion-reduce:transition-none motion-reduce:hover:transform-none"
+              className="bg-secondary-bg border border-light-border p-6 sm:p-8 rounded-2xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group motion-reduce:transition-none"
             >
-              <div className="flex items-start justify-between mb-8">
+              <div className="flex items-start justify-between mb-6 sm:mb-8">
                 <div 
-                  className="bg-primary-text/5 p-3 rounded-xl group-hover:bg-accent-muted transition-colors duration-300"
+                  className="bg-primary-text/5 p-2.5 sm:p-3 rounded-xl group-hover:bg-accent-muted transition-colors duration-300"
                 >
-                  <Award className="w-7 h-7 text-accent" />
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
                 <span 
                   className={`text-xs font-semibold px-3 py-1 rounded-full border ${
@@ -49,8 +49,8 @@ export default function Credentials() {
                 </span>
               </div>
               
-              <h3 className="heading-serif text-2xl font-bold mb-2 text-primary-text">{cert.title}</h3>
-              <p className="font-medium mb-6 text-accent">
+              <h3 className="heading-serif text-xl sm:text-2xl font-bold mb-2 text-primary-text">{cert.title}</h3>
+              <p className="font-medium mb-5 sm:mb-6 text-accent text-sm">
                 {cert.subtitle}
               </p>
               

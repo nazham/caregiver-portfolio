@@ -79,14 +79,14 @@ export default function Contact() {
       <div className="container-custom">
         
         {/* Main Banner Block */}
-        <div className="bg-secondary-bg rounded-2xl overflow-hidden border border-primary-border dark:border-light-border transition-colors duration-300">
+        <div className="bg-secondary-bg rounded-2xl overflow-hidden border border-light-border shadow-lg shadow-primary-text/5 transition-all duration-300 hover:shadow-lg hover:shadow-primary-text/10">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
-            <aside className="lg:col-span-2 p-10 md:p-12 bg-primary-bg/60 text-primary-text relative overflow-hidden border-b lg:border-b-0 lg:border-r border-primary-border dark:border-light-border transition-colors duration-300">
+            <aside className="lg:col-span-2 p-6 sm:p-8 lg:p-10 lg:p-12 bg-primary-bg/60 text-primary-text relative overflow-hidden border-b lg:border-b-0 lg:border-r border-primary-border dark:border-light-border transition-colors duration-300">
               <div className="relative z-10">
-                <h3 className="heading-serif text-3xl font-bold mb-4 text-primary-text">{contact.heading}</h3>
-                <p className="text-lead-text mb-10 leading-relaxed">
+                <h3 className="heading-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-primary-text leading-tight">{contact.heading}</h3>
+                <p className="text-lead-text text-sm sm:text-base lg:text-lg mb-8 sm:mb-12 leading-relaxed">
                   {contact.description}
                 </p>
                 
