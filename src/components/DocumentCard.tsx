@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ExternalLink, Download } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface DocumentCardProps {
   title: string;
@@ -61,15 +61,6 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
           >
             <span>View Document</span>
             <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-          
-          <a 
-            href={pdfPath}
-            download
-            className="py-2.5 px-4 bg-transparent hover:bg-white/5 border border-white/10 hover:border-[#C4A882] text-white/70 hover:text-[#C4A882] rounded-lg transition-all duration-200 flex items-center justify-center cursor-pointer"
-            aria-label={`Download ${title}`}
-          >
-            <Download className="w-4 h-4" />
           </a>
         </div>
       </div>

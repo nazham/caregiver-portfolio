@@ -78,10 +78,10 @@ export default function Credentials() {
           ))}
         </div>
 
-        {/* Downloadable Documents Grid */}
+        {/* Verified Documents Grid */}
         <div className="mt-20 pt-20 border-t border-white/5">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h3 className="heading-serif text-2xl font-bold mb-3 text-white">Downloadable Documents</h3>
+            <h3 className="heading-serif text-2xl font-bold mb-3 text-white">Verified Documents</h3>
             <p className="text-white/35 text-sm">Verified document copies available for immediate review.</p>
           </div>
           
