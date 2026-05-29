@@ -67,8 +67,8 @@ export default function Header() {
       <div ref={sentinelRef} className="absolute top-0 left-0 w-full h-5 pointer-events-none" />
       <header 
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-primary-bg/95 backdrop-blur-md border-b border-light-border py-3' 
+          isScrolled || mobileMenuOpen
+            ? 'bg-primary-bg/95 backdrop-blur-md border-b border-light-border py-3 shadow-[0_10px_30px_rgba(15,23,42,0.03)] dark:shadow-none' 
             : 'bg-transparent py-3 md:py-6'
         }`}
       >
@@ -169,36 +169,41 @@ export default function Header() {
 
         {/* Mobile Nav Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-primary-bg border-t border-light-border py-4 flex flex-col px-4 gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden absolute top-full left-0 w-full bg-primary-bg/98 backdrop-blur-lg border-b border-light-border py-6 flex flex-col px-6 gap-2 shadow-[0_15px_30px_rgba(15,23,42,0.08)] dark:shadow-none animate-in fade-in slide-in-from-top-2 duration-200">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
+              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
             >
-              About
+              <span>About</span>
+              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
+              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
             >
-              Services
+              <span>Services</span>
+              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('credentials')} 
-              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
+              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
             >
-              Credentials
+              <span>Credentials</span>
+              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
+              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
             >
-              Rates
+              <span>Rates</span>
+              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="btn-primary px-4 py-3 rounded-lg mt-2 text-center"
+              className="btn-primary w-full py-3.5 rounded-full mt-4 text-center justify-center"
             >
               Book a Visit
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         )}
