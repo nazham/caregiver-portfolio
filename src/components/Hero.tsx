@@ -7,11 +7,12 @@ export default function Hero() {
   const { hero, personalInfo } = portfolioContent;
 
   const getIcon = (iconName: string) => {
+    const iconClass = "w-4.5 h-4.5 text-accent shrink-0 transition-transform duration-300 group-hover/badge:scale-115";
     switch (iconName) {
       case 'ShieldCheck':
-        return <ShieldCheck className="w-4 h-4 text-accent" />;
+        return <ShieldCheck className={iconClass} />;
       case 'Clock':
-        return <Clock className="w-4 h-4 text-accent" />;
+        return <Clock className={iconClass} />;
       default:
         return null;
     }
@@ -50,29 +51,29 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-0 mb-6 lg:mb-8 order-2 lg:order-3">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-3.5 rounded-lg text-center"
+                className="btn-primary px-8 py-3.5 rounded-xl text-center shadow-[0_8px_20px_rgba(15,23,42,0.08)] dark:shadow-none hover:shadow-[0_12px_25px_rgba(15,23,42,0.15)]"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-secondary px-8 py-3.5 rounded-lg text-center"
+                className="btn-secondary px-8 py-3.5 rounded-xl text-center"
               >
                 {hero.ctaSecondary}
               </a>
             </div>
  
             {/* Subtitle — Third on mobile, second on desktop */}
-            <p className="text-sm sm:text-lg text-lead-text mb-4 lg:mb-10 leading-relaxed max-w-md order-3 lg:order-2">
+            <p className="text-sm sm:text-lg text-secondary-text mb-4 lg:mb-10 leading-relaxed max-w-md order-3 lg:order-2">
               {hero.subtitle}
             </p>
  
             {/* Micro Badges — Fourth on both mobile and desktop */}
-            <div className="mt-4 lg:mt-0 flex items-center gap-8 text-xs text-muted-text font-medium uppercase tracking-wider border-t border-light-border pt-4 lg:pt-8 order-4">
+            <div className="mt-4 lg:mt-0 flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] sm:text-xs text-secondary-text font-semibold uppercase tracking-wider border-t border-accent/20 pt-4 lg:pt-8 order-4">
               {hero.bullets.map((bullet, idx) => (
-                <div key={idx} className="flex items-center gap-2">
+                <div key={idx} className="flex items-center gap-2 group/badge cursor-default">
                    {getIcon(bullet.iconName)}
-                  <span>{bullet.text}</span>
+                  <span className="transition-colors duration-300 group-hover/badge:text-primary-text">{bullet.text}</span>
                 </div>
               ))}
             </div>
