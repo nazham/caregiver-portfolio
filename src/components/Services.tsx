@@ -15,20 +15,20 @@ export default function Services() {
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent mb-3">What I Offer</p>
           <h2 className="section-title">{services.title}</h2>
           <div className="w-12 h-px bg-accent mt-2 mb-5" aria-hidden="true"></div>
-          <p className="text-lead-text leading-relaxed">{services.description}</p>
+          <p className="text-secondary-text leading-relaxed text-sm sm:text-base">{services.description}</p>
         </div>
 
-        {/* Services List Grid — Elegant, compact, and responsive list layout */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-2 mb-20">
+        {/* Services List Grid — Elegant, compact, and responsive list layout with hover details */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3 mb-20">
           {services.list.map((service, idx) => (
             <div 
               key={idx} 
-              className="flex items-start gap-3 py-3 border-b border-light-border hover:border-accent/30 transition-colors duration-350 group"
+              className="flex items-center gap-3 py-3 px-4 border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 transition-all duration-250 group rounded-r-lg cursor-default"
             >
-              <div className="mt-1 shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-accent group-hover:scale-110 transition-transform duration-300" />
+              <div className="shrink-0">
+                <CheckCircle2 className="w-4 h-4 text-accent group-hover:scale-115 transition-transform duration-300" />
               </div>
-              <span className="font-medium text-secondary-text text-sm sm:text-[0.95rem] leading-relaxed transition-colors duration-300 group-hover:text-primary-text">
+              <span className="font-semibold text-secondary-text text-sm sm:text-[0.95rem] leading-relaxed transition-colors duration-300 group-hover:text-primary-text">
                 {service}
               </span>
             </div>

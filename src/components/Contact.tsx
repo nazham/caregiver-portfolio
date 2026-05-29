@@ -90,7 +90,7 @@ export default function Contact() {
               
               <div className="relative z-10">
                 <h3 className="heading-serif text-3xl font-bold mb-4 text-primary-text">{contact.heading}</h3>
-                <p className="text-lead-text mb-10 leading-relaxed">
+                <p className="text-secondary-text mb-10 leading-relaxed text-sm sm:text-base">
                   {contact.description}
                 </p>
                 
@@ -162,11 +162,11 @@ export default function Contact() {
                 <div 
                   className="text-center py-10 px-4 animate-in fade-in zoom-in-95 duration-500"
                 >
-                  <div className="inline-flex bg-accent-muted p-4 rounded-full mb-6">
-                    <CheckCircle2 className="w-12 h-12 text-accent" />
+                  <div className="inline-flex bg-accent-muted p-3.5 rounded-xl border border-accent/10 mb-6">
+                    <CheckCircle2 className="w-10 h-10 text-accent" />
                   </div>
                   <h4 className="heading-serif text-2xl font-bold text-primary-text mb-2">Request Submitted!</h4>
-                  <p className="text-lead-text max-w-md mx-auto leading-relaxed">
+                  <p className="text-secondary-text max-w-md mx-auto leading-relaxed">
                     Thank you, <strong className="text-primary-text">{name}</strong>. I have received your request and will get back to you at <strong className="text-primary-text">{phone}</strong> within 24 hours.
                   </p>
                   <button 
@@ -325,13 +325,13 @@ export default function Contact() {
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="group/btn btn-primary w-full py-4 rounded-lg font-bold"
+                    className="group/btn btn-accent w-full py-4 rounded-xl font-bold shadow-[0_8px_20px_rgba(196,168,130,0.15)] dark:shadow-none hover:shadow-[0_12px_25px_rgba(196,168,130,0.25)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
                       <>
-                        {form.submitCta} <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        {form.submitCta} <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
                       </>
                     )}
                   </button>

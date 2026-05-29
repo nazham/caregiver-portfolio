@@ -169,40 +169,40 @@ export default function Header() {
 
         {/* Mobile Nav Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-primary-bg/98 backdrop-blur-lg border-b border-light-border py-6 flex flex-col px-6 gap-2 shadow-[0_15px_30px_rgba(15,23,42,0.08)] dark:shadow-none animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden absolute top-full left-0 w-full bg-linear-to-b from-secondary-bg/98 to-secondary-bg/90 backdrop-blur-xl border-b border-accent/20 py-6 flex flex-col px-6 gap-2 shadow-[0_20px_40px_rgba(196,168,130,0.08)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.45)] animate-in fade-in slide-in-from-top-2 duration-250">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>About</span>
-              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
+              <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>Services</span>
-              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
+              <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('credentials')} 
-              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>Credentials</span>
-              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
+              <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="flex items-center justify-between py-3.5 px-3 rounded-lg font-medium text-secondary-text hover:text-accent hover:bg-accent-muted/20 transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>Rates</span>
-              <ArrowRight className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-accent" />
+              <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="btn-primary w-full py-3.5 rounded-full mt-4 text-center justify-center"
+              className="btn-accent w-full py-3.5 rounded-xl mt-4 text-center justify-center shadow-[0_8px_20px_rgba(196,168,130,0.15)] dark:shadow-none hover:shadow-[0_12px_25px_rgba(196,168,130,0.25)] transition-all duration-300"
             >
-              Book a Visit
+              <span>Book a Visit</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

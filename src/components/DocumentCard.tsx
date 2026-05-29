@@ -17,7 +17,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
 
   return (
     <article 
-      className="group p-2 bg-linear-to-b from-secondary-bg to-secondary-bg/50 border border-accent/30 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="group p-2 bg-linear-to-b from-secondary-bg to-secondary-bg/50 border border-accent/20 border-l-3 border-l-accent/70 dark:border-l-accent dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:border-l-accent hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       {/* Inset Thumbnail Cover with rounded corners and border frame */}
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl border border-light-border dark:border-primary-border/20 bg-primary-bg">
@@ -58,7 +58,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${title} (opens in a new tab)`}
-            className="group/btn flex-1 py-2.5 px-4 bg-accent hover:bg-accent-hover text-primary-text dark:text-secondary-bg text-sm font-bold rounded-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+            className="btn-accent flex-1 py-2.5 px-4 text-sm font-bold rounded-xl transition-all duration-300"
           >
             <span>View Document</span>
             <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" aria-hidden="true" />

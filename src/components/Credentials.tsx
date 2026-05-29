@@ -79,10 +79,12 @@ export default function Credentials() {
         </div>
 
         {/* Verified Documents Grid */}
-        <div className="mt-20 pt-20 border-t border-primary-border dark:border-light-border">
+        <div className="mt-20 pt-20 border-t border-accent/20 dark:border-light-border">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h3 className="heading-serif text-2xl font-bold mb-3 text-primary-text">Verified Documents</h3>
-            <p className="text-lead-text text-sm">Verified document copies available for immediate review.</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Credentials Folder</p>
+            <h3 className="heading-serif text-2xl sm:text-3xl font-bold text-primary-text">Verified Documents</h3>
+            <div className="w-8 h-px bg-accent mx-auto mt-4 mb-4" aria-hidden="true"></div>
+            <p className="text-secondary-text text-sm">Verified document copies available for immediate review.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
