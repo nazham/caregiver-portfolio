@@ -21,7 +21,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="section-padding bg-secondary-bg relative transition-colors duration-300">
+    <section id="about" className="section-padding bg-panel-bg relative transition-colors duration-300">
       <div className="container-custom">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
           

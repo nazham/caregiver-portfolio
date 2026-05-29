@@ -75,7 +75,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-primary-bg relative transition-colors duration-300">
+    <section id="contact" className="section-padding bg-panel-bg relative transition-colors duration-300">
       <div className="container-custom">
         
         {/* Main Banner Block */}
@@ -84,6 +84,10 @@ export default function Contact() {
             
             {/* Contact Details Column */}
             <aside className="lg:col-span-2 p-10 md:p-12 bg-primary-bg/60 text-primary-text relative overflow-hidden border-b lg:border-b-0 lg:border-r border-primary-border dark:border-light-border transition-colors duration-300">
+              {/* Premium decorative gradient glowing backdrop */}
+              <div className="absolute -top-24 -left-24 w-56 h-56 rounded-full bg-accent/8 dark:bg-accent/5 blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-24 -right-24 w-56 h-56 rounded-full bg-accent/5 dark:bg-accent/3 blur-3xl pointer-events-none" />
+              
               <div className="relative z-10">
                 <h3 className="heading-serif text-3xl font-bold mb-4 text-primary-text">{contact.heading}</h3>
                 <p className="text-lead-text mb-10 leading-relaxed">
@@ -321,13 +325,13 @@ export default function Contact() {
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full py-4 rounded-lg font-bold"
+                    className="group/btn btn-primary w-full py-4 rounded-lg font-bold"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
                       <>
-                        {form.submitCta} <ChevronRight className="w-5 h-5" />
+                        {form.submitCta} <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
                       </>
                     )}
                   </button>

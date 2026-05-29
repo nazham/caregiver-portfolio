@@ -25,7 +25,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="section-padding bg-secondary-bg transition-colors duration-300">
+    <section id="pricing" className="section-padding bg-panel-bg transition-colors duration-300">
       <div className="container-custom">
         
         {/* Pricing Matrix Card */}
