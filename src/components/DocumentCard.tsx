@@ -17,10 +17,10 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
 
   return (
     <article 
-      className="group bg-white dark:bg-[#161F30] border border-[#0F172A]/10 dark:border-white/5 hover:border-[#C4A882]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-2xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="group bg-secondary-bg border border-primary-border dark:border-light-border hover:border-accent/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-2xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       {/* Thumbnail Cover — Full-bleed preview to eliminate empty space */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-[#0F172A]/5 dark:border-white/5">
+      <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-light-border">
         <Image 
           src={thumbPath}
           alt={`${title} Thumbnail`}
@@ -38,15 +38,15 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
           <span 
             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${
               isResume 
-                ? 'bg-[#C4A882]/10 text-[#C4A882] border-[#C4A882]/20' 
-                : 'bg-[#0F172A]/5 dark:bg-white/5 text-[#0F172A]/40 dark:text-white/40 border-[#0F172A]/10 dark:border-white/10'
+                ? 'bg-accent-muted text-accent border-accent/20' 
+                : 'bg-primary-text/5 text-muted-text border-primary-border'
             }`}
           >
             {type}
           </span>
 
           {/* Document Title */}
-          <h4 className="heading-serif text-lg font-bold text-[#0F172A] dark:text-slate-100 mt-3 leading-snug line-clamp-2">
+          <h4 className="heading-serif text-lg font-bold text-primary-text mt-3 leading-snug line-clamp-2">
             {title}
           </h4>
         </div>

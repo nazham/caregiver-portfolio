@@ -68,75 +68,75 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-[#FAF6F0] dark:bg-[#0B0F19] relative transition-colors duration-300">
+    <section id="contact" className="section-padding bg-primary-bg relative transition-colors duration-300">
       <div className="container-custom">
         
         {/* Main Banner Block */}
-        <div className="bg-white dark:bg-[#161F30] rounded-2xl overflow-hidden border border-[#0F172A]/10 dark:border-white/5 transition-colors duration-300">
+        <div className="bg-secondary-bg rounded-2xl overflow-hidden border border-primary-border dark:border-light-border transition-colors duration-300">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
-            <aside className="lg:col-span-2 p-10 md:p-12 bg-[#FAF6F0]/60 dark:bg-[#0B0F19]/60 text-[#0F172A] dark:text-slate-100 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-[#0F172A]/10 dark:border-white/5 transition-colors duration-300">
+            <aside className="lg:col-span-2 p-10 md:p-12 bg-primary-bg/60 text-primary-text relative overflow-hidden border-b lg:border-b-0 lg:border-r border-primary-border dark:border-light-border transition-colors duration-300">
               <div className="relative z-10">
-                <h3 className="heading-serif text-3xl font-bold mb-4 text-[#0F172A] dark:text-slate-100">{contact.heading}</h3>
-                <p className="text-[#0F172A]/60 dark:text-slate-400 mb-10 leading-relaxed">
+                <h3 className="heading-serif text-3xl font-bold mb-4 text-primary-text">{contact.heading}</h3>
+                <p className="text-lead-text mb-10 leading-relaxed">
                   {contact.description}
                 </p>
                 
                 <div className="space-y-6">
                   {/* Phone */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-[#C4A882]/10 p-2.5 rounded-lg shrink-0">
-                      <Phone className="w-5 h-5 text-[#C4A882]" />
+                    <div className="bg-accent-muted p-2.5 rounded-lg shrink-0">
+                      <Phone className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.phoneLabel}</p>
-                      <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.phone}</p>
+                      <p className="text-xs text-muted-text font-medium uppercase tracking-wider">{details.phoneLabel}</p>
+                      <p className="font-semibold text-secondary-text mt-0.5">{details.phone}</p>
                     </div>
                   </div>
 
                   {/* WhatsApp */}
                   {details.whatsapp && (
                     <div className="flex items-start gap-4">
-                      <div className="bg-[#C4A882]/10 p-2.5 rounded-lg shrink-0 flex items-center justify-center">
+                      <div className="bg-accent-muted p-2.5 rounded-lg shrink-0 flex items-center justify-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
                           fill="currentColor"
-                          className="w-5 h-5 text-[#C4A882]"
+                          className="w-5 h-5 text-accent"
                           aria-hidden="true"
                         >
                           <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                         </svg>
                       </div>
                       <div>
-                        <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.whatsappLabel}</p>
-                        <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.whatsapp}</p>
+                        <p className="text-xs text-muted-text font-medium uppercase tracking-wider">{details.whatsappLabel}</p>
+                        <p className="font-semibold text-secondary-text mt-0.5">{details.whatsapp}</p>
                       </div>
                     </div>
                   )}
                   
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-[#C4A882]/10 p-2.5 rounded-lg shrink-0">
-                      <Mail className="w-5 h-5 text-[#C4A882]" />
+                    <div className="bg-accent-muted p-2.5 rounded-lg shrink-0">
+                      <Mail className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.emailLabel}</p>
-                      <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.email}</p>
+                      <p className="text-xs text-muted-text font-medium uppercase tracking-wider">{details.emailLabel}</p>
+                      <p className="font-semibold text-secondary-text mt-0.5">{details.email}</p>
                     </div>
                   </div>
                   
                   {/* Location / Area */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-[#C4A882]/10 p-2.5 rounded-lg shrink-0">
-                      <MapPin className="w-5 h-5 text-[#C4A882]" />
+                    <div className="bg-accent-muted p-2.5 rounded-lg shrink-0">
+                      <MapPin className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.locationLabel}</p>
-                      <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.location}</p>
+                      <p className="text-xs text-muted-text font-medium uppercase tracking-wider">{details.locationLabel}</p>
+                      <p className="font-semibold text-secondary-text mt-0.5">{details.location}</p>
                       {details.locationDetails && (
-                        <p className="text-sm text-[#0F172A]/50 dark:text-slate-500 mt-1 leading-relaxed">{details.locationDetails}</p>
+                        <p className="text-sm text-muted-text mt-1 leading-relaxed">{details.locationDetails}</p>
                       )}
                     </div>
                   </div>
@@ -145,18 +145,18 @@ export default function Contact() {
             </aside>
 
             {/* Form Column */}
-            <div className="lg:col-span-3 p-10 md:p-12 bg-white dark:bg-[#161F30] flex flex-col justify-center transition-colors duration-300">
+            <div className="lg:col-span-3 p-10 md:p-12 bg-secondary-bg flex flex-col justify-center transition-colors duration-300">
               {isSubmitted ? (
                 /* Success View with Animation */
                 <div 
                   className="text-center py-10 px-4 animate-in fade-in zoom-in-95 duration-500"
                 >
-                  <div className="inline-flex bg-[#C4A882]/10 p-4 rounded-full mb-6">
-                    <CheckCircle2 className="w-12 h-12 text-[#C4A882]" />
+                  <div className="inline-flex bg-accent-muted p-4 rounded-full mb-6">
+                    <CheckCircle2 className="w-12 h-12 text-accent" />
                   </div>
-                  <h4 className="heading-serif text-2xl font-bold text-[#0F172A] dark:text-slate-100 mb-2">Request Submitted!</h4>
-                  <p className="text-[#0F172A]/50 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong className="text-[#0F172A] dark:text-slate-100">{name}</strong>. I have received your request and will get back to you at <strong className="text-[#0F172A] dark:text-slate-100">{phone}</strong> within 24 hours.
+                  <h4 className="heading-serif text-2xl font-bold text-primary-text mb-2">Request Submitted!</h4>
+                  <p className="text-lead-text max-w-md mx-auto leading-relaxed">
+                    Thank you, <strong className="text-primary-text">{name}</strong>. I have received your request and will get back to you at <strong className="text-primary-text">{phone}</strong> within 24 hours.
                   </p>
                   <button 
                     onClick={() => {
@@ -167,7 +167,7 @@ export default function Contact() {
                       setShift('');
                       setExtraDetails('');
                     }}
-                    className="mt-8 text-[#C4A882] hover:text-[#B89B75] font-semibold flex items-center justify-center gap-1 mx-auto cursor-pointer transition-colors"
+                    className="mt-8 text-accent hover:text-accent-hover font-semibold flex items-center justify-center gap-1 mx-auto cursor-pointer transition-colors"
                   >
                     Submit another request
                   </button>
@@ -189,7 +189,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-name" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-muted-text mb-2"
                       >
                         Your Name
                       </label>
@@ -206,7 +206,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-phone" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-muted-text mb-2"
                       >
                         Phone Number
                       </label>
@@ -227,7 +227,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-care-type" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-muted-text mb-2"
                       >
                         Care Required For
                       </label>
@@ -237,7 +237,7 @@ export default function Contact() {
                           value={careType}
                           onChange={(e) => setCareType(e.target.value)}
                           className={`w-full form-input appearance-none cursor-pointer ${
-                            careType ? 'text-[#0F172A] dark:text-slate-100' : 'text-[#0F172A]/30 dark:text-slate-400/50'
+                            careType ? 'text-primary-text' : 'text-muted-text'
                           }`}
                         >
                           <option value="" disabled hidden>Select care required...</option>
@@ -250,7 +250,7 @@ export default function Contact() {
                     <div>
                       <label 
                         htmlFor="contact-shift" 
-                        className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
+                        className="block text-xs font-medium uppercase tracking-wider text-muted-text mb-2"
                       >
                         Preferred Shift
                       </label>
@@ -260,7 +260,7 @@ export default function Contact() {
                           value={shift}
                           onChange={(e) => setShift(e.target.value)}
                           className={`w-full form-input appearance-none cursor-pointer ${
-                            shift ? 'text-[#0F172A] dark:text-slate-100' : 'text-[#0F172A]/30 dark:text-slate-400/50'
+                            shift ? 'text-primary-text' : 'text-muted-text'
                           }`}
                         >
                           <option value="" disabled hidden>Select preferred shift...</option>
@@ -276,7 +276,7 @@ export default function Contact() {
                   <div>
                     <label 
                       htmlFor="contact-details" 
-                      className="block text-xs font-medium uppercase tracking-wider text-[#0F172A]/40 dark:text-slate-400 mb-2"
+                      className="block text-xs font-medium uppercase tracking-wider text-muted-text mb-2"
                     >
                       Additional Details
                     </label>
@@ -305,7 +305,7 @@ export default function Contact() {
                     )}
                   </button>
                   
-                  <p className="text-center text-xs text-[#0F172A]/25 dark:text-slate-500 mt-4">
+                  <p className="text-center text-xs text-muted-text mt-4">
                     {form.footerNote}
                   </p>
                 </form>

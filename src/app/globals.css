@@ -2,9 +2,64 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  /* ── Light Mode Color Palette ── */
+  --bg-primary: #FAF6F0;       /* Primary Cream */
+  --bg-secondary: #FFFFFF;     /* Secondary White */
+  --bg-panel: #FAF6F0;         /* Secondary panel */
+  
+  --text-primary: #0F172A;     /* Navy */
+  --text-secondary: rgba(15, 23, 42, 0.75); /* Navy / 75 */
+  --text-muted: rgba(15, 23, 42, 0.4);      /* Navy / 40 */
+  --text-lead: rgba(15, 23, 42, 0.55);      /* Navy / 55 */
+  
+  --border-primary: rgba(15, 23, 42, 0.1);  /* Navy / 10 */
+  --border-light: rgba(15, 23, 42, 0.05);   /* Navy / 5 */
+  
+  --accent: #C4A882;           /* Warm Sand Accent */
+  --accent-hover: #B89B75;     /* Darker Warm Sand */
+  --accent-muted: rgba(196, 168, 130, 0.1); /* Accent / 10 */
+}
+
+.dark {
+  /* ── Dark Mode Color Palette ── */
+  --bg-primary: #0B0F19;       /* Deep Navy */
+  --bg-secondary: #161F30;     /* Slate */
+  --bg-panel: #1E293B;         /* Slate panel */
+  
+  --text-primary: #F1F5F9;     /* Slate 100 */
+  --text-secondary: #CBD5E1;   /* Slate 300 */
+  --text-muted: #64748B;       /* Slate 500 */
+  --text-lead: #94A3B8;        /* Slate 400 */
+  
+  --border-primary: rgba(255, 255, 255, 0.1); /* White / 10 */
+  --border-light: rgba(255, 255, 255, 0.05);  /* White / 5 */
+  
+  --accent: #C4A882;           /* Warm Sand Accent */
+  --accent-hover: #B89B75;     /* Accent hover */
+  --accent-muted: rgba(196, 168, 130, 0.1); /* Accent / 10 */
+}
+
 @theme {
   --font-sans: var(--font-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-serif), "Playfair Display", ui-serif, Georgia, serif;
+
+  /* Theme color configuration mapping to CSS variables */
+  --color-primary-bg: var(--bg-primary);
+  --color-secondary-bg: var(--bg-secondary);
+  --color-panel-bg: var(--bg-panel);
+  
+  --color-primary-text: var(--text-primary);
+  --color-secondary-text: var(--text-secondary);
+  --color-muted-text: var(--text-muted);
+  --color-lead-text: var(--text-lead);
+  
+  --color-primary-border: var(--border-primary);
+  --color-light-border: var(--border-light);
+  
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
 }
 
 @layer base {
@@ -39,34 +94,34 @@
 
 .section-title {
   font-family: var(--font-serif);
-  @apply text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-[#0F172A] dark:text-slate-100;
+  @apply text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-primary-text;
 }
 
 .section-subtitle {
-  @apply text-[#0F172A]/60 dark:text-slate-400 leading-relaxed;
+  @apply text-lead-text leading-relaxed;
 }
 
 /* Buttons */
 
 .btn-primary {
-  @apply bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed dark:bg-white dark:hover:bg-slate-200 dark:text-[#0F172A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A882] dark:focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF6F0] dark:focus-visible:ring-offset-[#0B0F19] motion-reduce:transition-none;
+  @apply bg-primary-text hover:bg-secondary-text text-secondary-bg font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none;
 }
 
 .btn-secondary {
-  @apply bg-transparent hover:bg-[#0F172A]/5 border border-[#0F172A]/20 text-[#0F172A] font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 text-center cursor-pointer dark:hover:bg-white/5 dark:border-white/20 dark:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A882] dark:focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF6F0] dark:focus-visible:ring-offset-[#0B0F19] motion-reduce:transition-none;
+  @apply bg-transparent hover:bg-primary-text/5 border border-primary-text/20 text-primary-text font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 text-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none;
 }
 
 .btn-accent {
-  @apply bg-[#C4A882] hover:bg-[#B89B75] text-white font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer dark:bg-[#C4A882] dark:hover:bg-[#B89B75] dark:text-[#0F172A] dark:font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F172A] dark:focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF6F0] dark:focus-visible:ring-offset-[#0B0F19] motion-reduce:transition-none;
+  @apply bg-accent hover:bg-accent-hover text-secondary-bg font-semibold transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-text dark:focus-visible:ring-primary-text focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:focus-visible:ring-offset-primary-bg motion-reduce:transition-none;
 }
 
 .btn-outline-light {
-  @apply py-2.5 px-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white text-sm font-semibold rounded-lg transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A882] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F172A] motion-reduce:transition-none;
+  @apply py-2.5 px-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white text-sm font-semibold rounded-lg transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary-text motion-reduce:transition-none;
 }
 
 /* Form */
 
 .form-input {
-  @apply px-4 py-3 rounded-lg border border-[#0F172A]/10 focus:ring-2 focus:ring-[#C4A882]/50 focus:border-[#C4A882] outline-none transition-all duration-200 bg-white text-[#0F172A] placeholder-[#0F172A]/30 dark:border-white/10 dark:bg-[#1E293B] dark:text-slate-100 dark:placeholder-white/30 dark:focus:ring-[#C4A882]/30;
+  @apply px-4 py-3 rounded-lg border border-primary-border focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all duration-200 bg-secondary-bg text-primary-text placeholder-muted-text dark:focus:ring-accent/30;
 }
 

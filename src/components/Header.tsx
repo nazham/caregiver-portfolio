@@ -14,9 +14,12 @@ export default function Header() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    setMounted(true);
-    const isDark = document.documentElement.classList.contains('dark');
-    setTheme(isDark ? 'dark' : 'light');
+    const timer = setTimeout(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'dark' : 'light');
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {
@@ -65,7 +68,7 @@ export default function Header() {
       <header 
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-[#FAFAFA]/95 dark:bg-[#0B0F19]/95 backdrop-blur-md border-b border-[#0F172A]/5 dark:border-white/5 py-3' 
+            ? 'bg-primary-bg/95 backdrop-blur-md border-b border-light-border py-3' 
             : 'bg-transparent py-3 md:py-6'
         }`}
       >
@@ -79,32 +82,32 @@ export default function Header() {
             aria-label={`${brandName} Home`}
             onKeyDown={(e) => e.key === 'Enter' && scrollToSection('home')}
           >
-            <span className="heading-serif text-xl font-bold text-[#0F172A] dark:text-slate-100 group-hover:text-[#C4A882] dark:group-hover:text-[#C4A882] transition-colors duration-300">{brandName}</span>
+            <span className="heading-serif text-xl font-bold text-primary-text group-hover:text-accent transition-colors duration-300">{brandName}</span>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-sm font-medium text-[#0F172A]/60 dark:text-slate-400 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors duration-300 cursor-pointer"
+              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-sm font-medium text-[#0F172A]/60 dark:text-slate-400 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors duration-300 cursor-pointer"
+              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('credentials')} 
-              className="text-sm font-medium text-[#0F172A]/60 dark:text-slate-400 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors duration-300 cursor-pointer"
+              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
             >
               Credentials
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="text-sm font-medium text-[#0F172A]/60 dark:text-slate-400 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors duration-300 cursor-pointer"
+              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
             >
               Rates
             </button>
@@ -112,7 +115,7 @@ export default function Header() {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full hover:bg-[#0F172A]/5 dark:hover:bg-white/5 text-[#0F172A]/60 dark:text-slate-400 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-all duration-300 cursor-pointer focus:outline-none relative"
+              className="p-2.5 rounded-full hover:bg-primary-text/5 text-lead-text hover:text-accent transition-all duration-300 cursor-pointer focus:outline-none relative"
               aria-label="Toggle theme"
             >
               {mounted ? (
@@ -121,7 +124,7 @@ export default function Header() {
                   <Moon className={`w-5 h-5 absolute inset-0 transition-transform duration-500 ease-in-out ${theme === 'light' ? 'rotate-0 scale-100' : '-rotate-90 scale-0'}`} />
                 </div>
               ) : (
-                <div className="w-5 h-5 rounded-full border border-dashed border-[#0F172A]/20 dark:border-white/20 animate-pulse" />
+                <div className="w-5 h-5 rounded-full border border-dashed border-primary-text/20 animate-pulse" />
               )}
             </button>
 
@@ -139,7 +142,7 @@ export default function Header() {
             {/* Mobile Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full hover:bg-[#0F172A]/5 dark:hover:bg-white/5 text-[#0F172A]/60 dark:text-slate-400 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-all duration-300 cursor-pointer focus:outline-none relative"
+              className="p-2.5 rounded-full hover:bg-primary-text/5 text-lead-text hover:text-accent transition-all duration-300 cursor-pointer focus:outline-none relative"
               aria-label="Toggle theme"
             >
               {mounted ? (
@@ -148,13 +151,13 @@ export default function Header() {
                   <Moon className={`w-5 h-5 absolute inset-0 transition-transform duration-500 ease-in-out ${theme === 'light' ? 'rotate-0 scale-100' : '-rotate-90 scale-0'}`} />
                 </div>
               ) : (
-                <div className="w-5 h-5 rounded-full border border-dashed border-[#0F172A]/20 dark:border-white/20 animate-pulse" />
+                <div className="w-5 h-5 rounded-full border border-dashed border-primary-text/20 animate-pulse" />
               )}
             </button>
 
             {/* Mobile Menu Toggle */}
             <button 
-              className="p-2 text-[#0F172A]/60 dark:text-slate-400 hover:text-[#0F172A] dark:hover:text-slate-100 focus:outline-none cursor-pointer" 
+              className="p-2 text-lead-text hover:text-primary-text focus:outline-none cursor-pointer" 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
@@ -166,28 +169,28 @@ export default function Header() {
 
         {/* Mobile Nav Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-[#FAFAFA] dark:bg-[#0B0F19] border-t border-[#0F172A]/5 dark:border-white/5 py-4 flex flex-col px-4 gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden absolute top-full left-0 w-full bg-primary-bg border-t border-light-border py-4 flex flex-col px-4 gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-left py-2 font-medium text-[#0F172A]/70 dark:text-slate-300 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors cursor-pointer"
+              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-left py-2 font-medium text-[#0F172A]/70 dark:text-slate-300 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors cursor-pointer"
+              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('credentials')} 
-              className="text-left py-2 font-medium text-[#0F172A]/70 dark:text-slate-300 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors cursor-pointer"
+              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
             >
               Credentials
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="text-left py-2 font-medium text-[#0F172A]/70 dark:text-slate-300 hover:text-[#C4A882] dark:hover:text-[#C4A882] transition-colors cursor-pointer"
+              className="text-left py-2 font-medium text-secondary-text hover:text-accent transition-colors cursor-pointer"
             >
               Rates
             </button>
