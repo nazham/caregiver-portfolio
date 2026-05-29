@@ -23,17 +23,17 @@ export default function About() {
   return (
     <section id="about" className="section-padding bg-secondary-bg relative transition-colors duration-300">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-20 items-start">
           
           {/* Bio Column (60% width on desktop) */}
-          <article className="lg:col-span-3 space-y-8">
+          <article className="lg:col-span-3 space-y-6 sm:space-y-8">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">About Me</p>
-              <h2 className="heading-serif text-4xl sm:text-5xl font-bold text-primary-text leading-tight">{about.title}</h2>
-              <div className="w-16 h-1 bg-accent mt-6 rounded-full" aria-hidden="true"></div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">About Me</p>
+              <h2 className="heading-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-text leading-tight">{about.title}</h2>
+              <div className="w-16 h-1 bg-accent mt-4 sm:mt-6 rounded-full" aria-hidden="true"></div>
             </div>
             
-            <div className="space-y-6 text-lead-text text-base leading-[1.8]">
+            <div className="space-y-5 sm:space-y-6 text-lead-text text-sm sm:text-base leading-[1.7] sm:leading-[1.8]">
               {about.bioParagraphs.map((paragraph, idx) => (
                 <p 
                   key={idx} 
@@ -45,9 +45,9 @@ export default function About() {
           </article>
           
           {/* Values Cards Column (40% width on desktop) */}
-          <aside className="lg:col-span-2 space-y-6" aria-labelledby="principles-title">
-            <h3 id="principles-title" className="text-xs font-medium uppercase tracking-[0.2em] text-muted-text">My Care Principles</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+          <aside className="lg:col-span-2 space-y-5 sm:space-y-6" aria-labelledby="principles-title">
+            <h3 id="principles-title" className="text-xs font-semibold uppercase tracking-widest text-muted-text">My Care Principles</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
               {about.values.map((item, idx) => (
                 <div 
                   key={idx} 

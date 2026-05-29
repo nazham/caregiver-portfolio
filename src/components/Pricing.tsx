@@ -30,13 +30,13 @@ export default function Pricing() {
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-primary-bg border border-light-border rounded-2xl p-10 md:p-16 max-w-4xl mx-auto"
+          className="bg-primary-bg border border-light-border rounded-2xl p-6 sm:p-10 lg:p-16 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-14 gap-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 sm:mb-14 gap-6 sm:gap-8">
             <div>
-              <h3 className="heading-serif text-3xl font-bold text-primary-text">{pricing.title}</h3>
-              <p className="text-lead-text mt-2">{pricing.description}</p>
+              <h3 className="heading-serif text-2xl sm:text-3xl font-bold text-primary-text">{pricing.title}</h3>
+              <p className="text-lead-text text-sm sm:text-base mt-2">{pricing.description}</p>
             </div>
             
             {/* Sliding Toggle Control */}
@@ -50,7 +50,7 @@ export default function Pricing() {
                 aria-selected={pricingTab === 'day'}
                 aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('day')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
+                className={`relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
                   pricingTab === 'day' 
                     ? 'text-primary-text' 
                     : 'text-muted-text hover:text-lead-text'
@@ -63,7 +63,7 @@ export default function Pricing() {
                 aria-selected={pricingTab === 'night'}
                 aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('night')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
+                className={`relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
                   pricingTab === 'night' 
                     ? 'text-primary-text' 
                     : 'text-muted-text hover:text-lead-text'
@@ -89,14 +89,14 @@ export default function Pricing() {
             id="pricing-tabpanel"
             role="tabpanel"
             aria-label={`${pricingTab === 'day' ? 'Day' : 'Night'} Shift Rates and Features`}
-            className="grid md:grid-cols-2 gap-12 items-center"
+            className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center"
           >
             
             {/* Features Info column */}
             <div className="order-2 md:order-1">
-              <ul className="space-y-5">
+              <ul className="space-y-4 sm:space-y-5">
                 {activePlan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3.5 text-lead-text font-medium text-base">
+                  <li key={idx} className="flex items-center gap-2.5 sm:gap-3.5 text-lead-text font-medium text-sm sm:text-base">
                     {getFeatureIcon(idx)}
                     <span>{feature}</span>
                   </li>
