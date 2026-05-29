@@ -7,7 +7,7 @@ export default function Hero() {
   const { hero, personalInfo } = portfolioContent;
 
   const getIcon = (iconName: string) => {
-    const iconClass = "w-4.5 h-4.5 text-accent shrink-0 transition-transform duration-300 group-hover/badge:scale-115";
+    const iconClass = "w-4.5 h-4.5 text-accent shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/badge:scale-115 motion-reduce:transition-none";
     switch (iconName) {
       case 'ShieldCheck':
         return <ShieldCheck className={iconClass} />;
@@ -24,95 +24,98 @@ export default function Hero() {
       className="relative pt-16 pb-12 lg:pt-36 lg:pb-28 bg-primary-bg transition-colors duration-300"
     >
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-y-4 lg:gap-20 items-center">
           
-          {/* Hero Content — Second on mobile, first on desktop */}
-          <div className="max-w-xl order-2 lg:order-1 flex flex-col">
-            {/* Understated availability badge — Desktop only */}
-            <div 
-              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-8 self-start"
-            >
-              <span className="w-1.5 h-1.5 rounded-none bg-accent animate-pulse"></span>
+          {/* Hero Content */}
+          <div className="max-w-xl order-2 lg:order-1 flex flex-col justify-center">
+            {/* Crisp availability sub-label */}
+            <span className="block tracking-[0.2em] font-sans uppercase text-xs text-slate-500 dark:text-slate-400 mb-4 sm:mb-6 font-semibold">
               {hero.badgeText}
-            </div>
+            </span>
             
-            <h1 className="heading-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold text-primary-text leading-[1.1] mb-4 sm:mb-6 order-1">
-              {hero.title.includes('Professional, Compassionate') ? (
-                <>
-                  Professional, <br className="sm:hidden" /> Compassionate
-                </>
-              ) : (
-                hero.title
-              )}{' '}
-              <span className="text-accent block">{hero.titleHighlight}</span>
+            {/* Elegant Serif Heading with Typography Tension */}
+            <h1 className="heading-serif text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-primary-text leading-[1.05] tracking-tight mb-4 sm:mb-6 order-1">
+              <span>
+                {hero.title.includes('Professional, Compassionate') ? (
+                  <>
+                    Professional, <br className="sm:hidden" /> Compassionate
+                  </>
+                ) : (
+                  hero.title
+                )}
+              </span>{' '}
+              <span className="font-serif italic font-normal text-accent block mt-2 sm:mt-3">
+                {hero.titleHighlight}
+              </span>
             </h1>
             
-            {/* CTA Buttons — Second on mobile, third on desktop */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-0 mb-6 lg:mb-8 order-2 lg:order-3">
+            {/* Subtitle */}
+            <p className="text-sm sm:text-lg text-secondary-text mb-6 lg:mb-8 leading-relaxed max-w-md order-3 lg:order-2">
+              {hero.subtitle}
+            </p>
+            
+            {/* CTA Actions */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8 lg:mb-12 order-2 lg:order-3">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-3.5 rounded-none text-center shadow-none hover:shadow-none"
+                className="inline-flex items-center justify-center bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 tracking-widest uppercase text-xs font-bold px-10 py-4 rounded-none shadow-none hover:bg-slate-900 dark:hover:bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg motion-reduce:transition-none cursor-pointer"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-secondary px-8 py-3.5 rounded-none text-center"
+                className="group/link inline-flex items-center text-primary-text text-sm font-semibold tracking-wide cursor-pointer"
               >
-                {hero.ctaSecondary}
+                <span className="border-b border-primary-text/30 group-hover/link:border-primary-text pb-0.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none">
+                  {hero.ctaSecondary}
+                </span>
               </a>
             </div>
  
-            {/* Subtitle — Third on mobile, second on desktop */}
-            <p className="text-sm sm:text-lg text-secondary-text mb-4 lg:mb-10 leading-relaxed max-w-md order-3 lg:order-2">
-              {hero.subtitle}
-            </p>
- 
-            {/* Micro Badges — Fourth on both mobile and desktop */}
-            <div className="mt-4 lg:mt-0 flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] sm:text-xs text-secondary-text font-semibold uppercase tracking-wider border-t border-accent/20 pt-4 lg:pt-8 order-4">
+            {/* Trust Metrics — Structural separator */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] sm:text-xs text-secondary-text font-semibold uppercase tracking-wider border-t border-slate-200 dark:border-slate-700/50 pt-6 lg:pt-8 order-4">
               {hero.bullets.map((bullet, idx) => (
                 <div key={idx} className="flex items-center gap-2 group/badge cursor-default">
                    {getIcon(bullet.iconName)}
-                  <span className="transition-colors duration-300 group-hover/badge:text-primary-text">{bullet.text}</span>
+                  <span className="transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/badge:text-primary-text motion-reduce:transition-none">{bullet.text}</span>
                 </div>
               ))}
             </div>
           </div>
  
-          {/* Hero Portrait Image — First on mobile, second on desktop */}
-          <div className="relative mx-auto lg:ml-auto w-full max-w-md order-1 lg:order-2 flex flex-col">
-            {/* Understated availability badge — Mobile only */}
-            <div 
-              className="inline-flex lg:hidden items-center gap-2 px-3.5 py-1.5 rounded-none bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4 w-fit"
-            >
-              <span className="w-1.5 h-1.5 rounded-none bg-accent animate-pulse"></span>
-              {hero.badgeText}
-            </div>
- 
-            <div className="relative bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-1.5 rounded-none border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.06)] dark:shadow-none w-full">
-              <Image 
-                src={personalInfo.profileImage} 
-                alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
-                width={500}
-                height={500}
-                className="w-full aspect-4/5 rounded-none object-cover object-top bg-primary-bg"
-                priority={true} // Informs Next.js to preload and assign high priority (LCP)
-              />
-            </div>
- 
-            {/* Subtle credential tag — no bounce, positioned bottom-left */}
-            <div 
-              className="absolute -bottom-4 -left-4 bg-linear-to-b from-secondary-bg to-secondary-bg/95 px-5 py-3 rounded-none border border-accent/20 dark:border-light-border shadow-[0_12px_40px_rgba(196,168,130,0.1)] dark:shadow-none flex items-center gap-4 transition-all duration-300 hover:border-accent/40"
-            >
-              <div className="bg-accent-muted rounded-none border border-accent/10 shrink-0 text-accent">
-                <Award className="w-5 h-5" />
+          {/* Hero Portrait Image with Asymmetric Framing */}
+          <div className="relative mx-auto lg:ml-auto w-full max-w-[360px] sm:max-w-md order-1 lg:order-2 pl-4 pb-4 mb-2 lg:mb-0">
+            <div className="relative w-full aspect-4/5">
+              {/* Solid offset background accent panel (architectural frame) */}
+              <div className="absolute -bottom-4 -left-4 w-full h-full bg-accent z-0" />
+              
+              {/* Foreground Image Container */}
+              <div className="relative w-full h-full bg-secondary-bg p-1.5 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.06)] dark:shadow-none z-10">
+                <Image 
+                  src={personalInfo.profileImage} 
+                  alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
+                  width={500}
+                  height={625}
+                  className="w-full h-full rounded-none object-cover object-top bg-primary-bg"
+                  priority={true}
+                />
               </div>
-              <div>
-                <p className="text-[9px] text-muted-text font-semibold uppercase tracking-wider leading-none">Certified Professional</p>
-                <p className="text-sm font-bold text-primary-text mt-1 leading-none">Diploma in Caregiving</p>
+  
+              {/* Subtle credential tag */}
+              <div 
+                className="absolute -bottom-6 right-6 bg-linear-to-b from-secondary-bg to-secondary-bg/95 px-5 py-3 rounded-none border border-accent/20 dark:border-light-border shadow-[0_12px_40px_rgba(196,168,130,0.1)] dark:shadow-none flex items-center gap-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-accent/40 motion-reduce:transition-none z-20"
+              >
+                <div className="bg-accent-muted p-2 rounded-none border border-accent/10 shrink-0 text-accent">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[9px] text-muted-text font-semibold uppercase tracking-wider leading-none">Certified Professional</p>
+                  <p className="text-sm font-bold text-primary-text mt-1 leading-none">Diploma in Caregiving</p>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
