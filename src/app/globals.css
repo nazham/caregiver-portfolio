@@ -125,3 +125,45 @@
   @apply px-4 py-3 rounded-none border border-primary-border hover:border-accent/30 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all duration-200 bg-primary-bg text-primary-text placeholder-muted-text dark:focus:ring-accent/30;
 }
 
+/* ── Hero Entrance Animations ── */
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-frame-expand {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: hero-reveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-frame-expand {
+  opacity: 0;
+  animation: hero-frame-expand 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal,
+  .hero-frame-expand {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
