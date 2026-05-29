@@ -115,7 +115,7 @@ export default function Header() {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full hover:bg-primary-text/5 text-lead-text hover:text-accent transition-all duration-300 cursor-pointer focus:outline-none relative"
+              className="p-2.5 rounded-none hover:bg-primary-text/5 text-lead-text hover:text-accent transition-all duration-300 cursor-pointer focus:outline-none relative"
               aria-label="Toggle theme"
             >
               {mounted ? (
@@ -124,13 +124,13 @@ export default function Header() {
                   <Moon className={`w-5 h-5 absolute inset-0 transition-transform duration-500 ease-in-out ${theme === 'light' ? 'rotate-0 scale-100' : '-rotate-90 scale-0'}`} />
                 </div>
               ) : (
-                <div className="w-5 h-5 rounded-full border border-dashed border-primary-text/20 animate-pulse" />
+                <div className="w-5 h-5 rounded-none border border-dashed border-primary-text/20 animate-pulse" />
               )}
             </button>
 
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="btn-primary px-5 py-2.5 rounded-full text-sm"
+              className="btn-primary px-5 py-2.5 rounded-none text-sm"
             >
               Book a Visit
               <ArrowRight className="w-4 h-4" />
@@ -142,7 +142,7 @@ export default function Header() {
             {/* Mobile Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full hover:bg-primary-text/5 text-lead-text hover:text-accent transition-all duration-300 cursor-pointer focus:outline-none relative"
+              className="p-2.5 rounded-none hover:bg-primary-text/5 text-lead-text hover:text-accent transition-all duration-300 cursor-pointer focus:outline-none relative"
               aria-label="Toggle theme"
             >
               {mounted ? (
@@ -151,7 +151,7 @@ export default function Header() {
                   <Moon className={`w-5 h-5 absolute inset-0 transition-transform duration-500 ease-in-out ${theme === 'light' ? 'rotate-0 scale-100' : '-rotate-90 scale-0'}`} />
                 </div>
               ) : (
-                <div className="w-5 h-5 rounded-full border border-dashed border-primary-text/20 animate-pulse" />
+                <div className="w-5 h-5 rounded-none border border-dashed border-primary-text/20 animate-pulse" />
               )}
             </button>
 
@@ -172,35 +172,35 @@ export default function Header() {
           <div className="md:hidden absolute top-full left-0 w-full bg-linear-to-b from-secondary-bg/98 to-secondary-bg/90 backdrop-blur-xl border-b border-accent/20 py-6 flex flex-col px-6 gap-2 shadow-[0_20px_40px_rgba(196,168,130,0.08)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.45)] animate-in fade-in slide-in-from-top-2 duration-250">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-none font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>About</span>
               <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-none font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>Services</span>
               <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('credentials')} 
-              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-none font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>Credentials</span>
               <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="flex items-center justify-between py-3 px-4 rounded-r-lg font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-none font-medium text-secondary-text border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 hover:text-accent transition-all duration-200 cursor-pointer group"
             >
               <span>Rates</span>
               <ArrowRight className="w-4 h-4 opacity-35 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 text-accent" />
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="btn-accent w-full py-3.5 rounded-xl mt-4 text-center justify-center shadow-[0_8px_20px_rgba(196,168,130,0.15)] dark:shadow-none hover:shadow-[0_12px_25px_rgba(196,168,130,0.25)] transition-all duration-300"
+              className="btn-accent w-full py-3.5 rounded-none mt-4 text-center justify-center shadow-none hover:shadow-none transition-all duration-300"
             >
               <span>Book a Visit</span>
               <ArrowRight className="w-4 h-4" />

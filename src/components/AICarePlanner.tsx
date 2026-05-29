@@ -108,7 +108,7 @@ export default function AICarePlanner() {
   return (
     <section 
       aria-labelledby="ai-planner-title"
-      className="bg-linear-to-br from-secondary-bg to-secondary-bg/95 rounded-3xl p-8 md:p-12 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] max-w-4xl mx-auto mb-20 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="bg-linear-to-br from-secondary-bg to-secondary-bg/95 rounded-none p-8 md:p-12 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] max-w-4xl mx-auto mb-20 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       <div className="relative z-10">
         
@@ -136,7 +136,7 @@ export default function AICarePlanner() {
           <button 
             onClick={handleGenerate}
             disabled={loading || !careNeeds.trim()}
-            className="btn-primary px-6 py-4 rounded-lg min-w-[200px]"
+            className="btn-primary px-6 py-4 rounded-none min-w-[200px]"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : `✨ ${aiPlanner.ctaText}`}
           </button>
@@ -145,7 +145,7 @@ export default function AICarePlanner() {
         {/* Error Messages (if any) */}
         {error && (
           <div 
-            className="p-4 bg-red-50 text-red-600 rounded-lg mb-4 border border-red-100 text-sm"
+            className="p-4 bg-red-50 text-red-600 rounded-none mb-4 border border-red-100 text-sm"
             role="alert"
           >
             {error}
@@ -155,7 +155,7 @@ export default function AICarePlanner() {
         {/* Results Showcase */}
         {carePlan && (
           <div 
-            className="bg-linear-to-b from-primary-bg to-primary-bg/50 border border-accent/20 rounded-2xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500 shadow-[0_8px_20px_rgba(196,168,130,0.02)]"
+            className="bg-linear-to-b from-primary-bg to-primary-bg/50 border border-accent/20 rounded-none p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500 shadow-[0_8px_20px_rgba(196,168,130,0.02)]"
           >
             <h4 className="heading-serif text-xl font-bold text-primary-text mb-2">{carePlan.title}</h4>
             <p className="text-muted-text mb-6 italic">{carePlan.intro}</p>
@@ -164,7 +164,7 @@ export default function AICarePlanner() {
               {carePlan.schedule.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="group flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-secondary-bg border border-accent/15 dark:border-light-border rounded-xl hover:border-accent/30 transition-all duration-300"
+                  className="group flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-secondary-bg border border-accent/15 dark:border-light-border rounded-none hover:border-accent/30 transition-all duration-300"
                 >
                   <div className="min-w-[140px] font-medium text-accent text-sm mt-0.5">
                     {item.timeOfDay}

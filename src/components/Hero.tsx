@@ -30,9 +30,9 @@ export default function Hero() {
           <div className="max-w-xl order-2 lg:order-1 flex flex-col">
             {/* Understated availability badge — Desktop only */}
             <div 
-              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-8 self-start"
+              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-8 self-start"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-none bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
             
@@ -51,13 +51,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-0 mb-6 lg:mb-8 order-2 lg:order-3">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-3.5 rounded-xl text-center shadow-[0_8px_20px_rgba(15,23,42,0.08)] dark:shadow-none hover:shadow-[0_12px_25px_rgba(15,23,42,0.15)]"
+                className="btn-primary px-8 py-3.5 rounded-none text-center shadow-none hover:shadow-none"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-secondary px-8 py-3.5 rounded-xl text-center"
+                className="btn-secondary px-8 py-3.5 rounded-none text-center"
               >
                 {hero.ctaSecondary}
               </a>
@@ -83,28 +83,28 @@ export default function Hero() {
           <div className="relative mx-auto lg:ml-auto w-full max-w-md order-1 lg:order-2 flex flex-col">
             {/* Understated availability badge — Mobile only */}
             <div 
-              className="inline-flex lg:hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4 w-fit"
+              className="inline-flex lg:hidden items-center gap-2 px-3.5 py-1.5 rounded-none bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4 w-fit"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-none bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
  
-            <div className="relative bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-1.5 rounded-2xl border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.06)] dark:shadow-none w-full">
+            <div className="relative bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-1.5 rounded-none border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.06)] dark:shadow-none w-full">
               <Image 
                 src={personalInfo.profileImage} 
                 alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
                 width={500}
                 height={500}
-                className="w-full aspect-4/5 rounded-xl object-cover object-top bg-primary-bg"
+                className="w-full aspect-4/5 rounded-none object-cover object-top bg-primary-bg"
                 priority={true} // Informs Next.js to preload and assign high priority (LCP)
               />
             </div>
  
             {/* Subtle credential tag — no bounce, positioned bottom-left */}
             <div 
-              className="absolute -bottom-4 -left-4 bg-linear-to-b from-secondary-bg to-secondary-bg/95 px-5 py-3 rounded-2xl border border-accent/20 dark:border-light-border shadow-[0_12px_40px_rgba(196,168,130,0.1)] dark:shadow-none flex items-center gap-4 transition-all duration-300 hover:border-accent/40"
+              className="absolute -bottom-4 -left-4 bg-linear-to-b from-secondary-bg to-secondary-bg/95 px-5 py-3 rounded-none border border-accent/20 dark:border-light-border shadow-[0_12px_40px_rgba(196,168,130,0.1)] dark:shadow-none flex items-center gap-4 transition-all duration-300 hover:border-accent/40"
             >
-              <div className="bg-accent-muted rounded-lg border border-accent/10 shrink-0 text-accent">
+              <div className="bg-accent-muted rounded-none border border-accent/10 shrink-0 text-accent">
                 <Award className="w-5 h-5" />
               </div>
               <div>

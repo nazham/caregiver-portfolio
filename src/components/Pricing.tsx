@@ -30,7 +30,7 @@ export default function Pricing() {
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none rounded-3xl p-8 md:p-12 max-w-4xl mx-auto"
+          className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none rounded-none p-8 md:p-12 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
@@ -43,14 +43,14 @@ export default function Pricing() {
             <div 
               role="tablist"
               aria-label="Visit shift pricing selector"
-              className="bg-primary-text/5 p-1 rounded-lg inline-flex relative border border-light-border"
+              className="bg-primary-text/5 p-1 rounded-none inline-flex relative border border-light-border"
             >
               <button 
                 role="tab"
                 aria-selected={pricingTab === 'day'}
                 aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('day')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-300 cursor-pointer ${
+                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-none transition-all duration-300 cursor-pointer ${
                   pricingTab === 'day' 
                     ? 'text-secondary-bg' 
                     : 'text-muted-text hover:text-lead-text'
@@ -63,7 +63,7 @@ export default function Pricing() {
                 aria-selected={pricingTab === 'night'}
                 aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('night')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-300 cursor-pointer ${
+                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-none transition-all duration-300 cursor-pointer ${
                   pricingTab === 'night' 
                     ? 'text-secondary-bg' 
                     : 'text-muted-text hover:text-lead-text'
@@ -74,7 +74,7 @@ export default function Pricing() {
               
               {/* Sliding Background indicator */}
               <div 
-                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-accent rounded-md transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
+                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-accent rounded-none transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
                 style={{ 
                   transform: pricingTab === 'day' 
                     ? 'translateX(0)' 
@@ -109,7 +109,7 @@ export default function Pricing() {
             
             {/* Rates Card Column */}
             <article 
-              className="order-1 md:order-2 bg-linear-to-b from-primary-bg to-primary-bg/40 border border-accent/20 dark:border-light-border p-8 rounded-2xl text-center relative overflow-hidden text-primary-text shadow-[0_8px_20px_rgba(196,168,130,0.02)] hover:border-accent/35 transition-all duration-300"
+              className="order-1 md:order-2 bg-linear-to-b from-primary-bg to-primary-bg/40 border border-accent/20 dark:border-light-border p-8 rounded-none text-center relative overflow-hidden text-primary-text shadow-[0_8px_20px_rgba(196,168,130,0.02)] hover:border-accent/35 transition-all duration-300"
             >
               <h4 className="text-primary-text/50 font-medium mb-2 text-sm">
                 {pricingTab === 'day' ? 'Daytime Rate' : 'Overnight Rate'}
@@ -127,7 +127,7 @@ export default function Pricing() {
               
               <a 
                 href="#contact" 
-                className="btn-accent w-full mt-8 py-3 px-6 rounded-lg block text-center"
+                className="btn-accent w-full mt-8 py-3 px-6 rounded-none block text-center"
               >
                 Request this shift
               </a>

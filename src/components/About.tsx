@@ -69,9 +69,9 @@ export default function About() {
               {about.values.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="group bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-6 rounded-2xl border border-accent/20 border-l-4 border-l-accent/70 dark:border-l-accent dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none flex gap-4 items-start transition-all duration-300 hover:border-accent/40 hover:border-l-accent hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
+                  className="group bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-6 rounded-none border border-accent/20 border-l-4 border-l-accent/70 dark:border-l-accent dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none flex gap-4 items-start transition-all duration-300 hover:border-accent/40 hover:border-l-accent hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
                 >
-                  <div className="bg-accent-muted p-3 rounded-xl border border-accent/10 shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:border-accent/50 text-accent group-hover:text-secondary-bg">
+                  <div className="bg-accent-muted p-3 rounded-none border border-accent/10 shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:border-accent/50 text-accent group-hover:text-secondary-bg">
                     {getIcon(item.iconName, 'w-5 h-5 transition-colors duration-300')}
                   </div>
                   <div>

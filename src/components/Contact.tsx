@@ -79,14 +79,14 @@ export default function Contact() {
       <div className="container-custom">
         
         {/* Main Banner Block */}
-        <div className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 rounded-3xl overflow-hidden border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none transition-colors duration-300">
+        <div className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 rounded-none overflow-hidden border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none transition-colors duration-300">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
             <aside className="lg:col-span-2 p-10 md:p-12 bg-linear-to-b from-primary-bg/85 to-primary-bg/40 text-primary-text relative overflow-hidden border-b lg:border-b-0 lg:border-r border-accent/20 dark:border-light-border transition-colors duration-300">
               {/* Premium decorative gradient glowing backdrop */}
-              <div className="absolute -top-24 -left-24 w-56 h-56 rounded-full bg-accent/8 dark:bg-accent/5 blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-24 -right-24 w-56 h-56 rounded-full bg-accent/5 dark:bg-accent/3 blur-3xl pointer-events-none" />
+              <div className="absolute -top-24 -left-24 w-56 h-56 rounded-none bg-accent/8 dark:bg-accent/5 blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-24 -right-24 w-56 h-56 rounded-none bg-accent/5 dark:bg-accent/3 blur-3xl pointer-events-none" />
               
               <div className="relative z-10">
                 <h3 className="heading-serif text-3xl font-bold mb-4 text-primary-text">{contact.heading}</h3>
@@ -97,7 +97,7 @@ export default function Contact() {
                 <div className="space-y-6">
                   {/* Phone */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent-muted p-3 rounded-xl border border-accent/10 shrink-0 text-accent">
+                    <div className="bg-accent-muted p-3 rounded-none border border-accent/10 shrink-0 text-accent">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -109,7 +109,7 @@ export default function Contact() {
                   {/* WhatsApp */}
                   {details.whatsapp && (
                     <div className="flex items-start gap-4">
-                      <div className="bg-accent-muted p-2.5 rounded-xl border border-accent/10 shrink-0 text-accent flex items-center justify-center">
+                      <div className="bg-accent-muted p-2.5 rounded-none border border-accent/10 shrink-0 text-accent flex items-center justify-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
@@ -129,7 +129,7 @@ export default function Contact() {
                   
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent-muted p-3 rounded-xl border border-accent/10 shrink-0 text-accent">
+                    <div className="bg-accent-muted p-3 rounded-none border border-accent/10 shrink-0 text-accent">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
@@ -140,7 +140,7 @@ export default function Contact() {
                   
                   {/* Location / Area */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent-muted p-3 rounded-xl border border-accent/10 shrink-0 text-accent">
+                    <div className="bg-accent-muted p-3 rounded-none border border-accent/10 shrink-0 text-accent">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -162,7 +162,7 @@ export default function Contact() {
                 <div 
                   className="text-center py-10 px-4 animate-in fade-in zoom-in-95 duration-500"
                 >
-                  <div className="inline-flex bg-accent-muted p-3.5 rounded-xl border border-accent/10 mb-6">
+                  <div className="inline-flex bg-accent-muted p-3.5 rounded-none border border-accent/10 mb-6">
                     <CheckCircle2 className="w-10 h-10 text-accent" />
                   </div>
                   <h4 className="heading-serif text-2xl font-bold text-primary-text mb-2">Request Submitted!</h4>
@@ -202,7 +202,7 @@ export default function Contact() {
 
                   {errorMsg && (
                     <div 
-                      className="p-4 bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 rounded-lg border border-red-100 dark:border-red-950/30 text-sm font-medium"
+                      className="p-4 bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 rounded-none border border-red-100 dark:border-red-950/30 text-sm font-medium"
                       role="alert"
                     >
                       {errorMsg}
@@ -325,7 +325,7 @@ export default function Contact() {
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="group/btn btn-accent w-full py-4 rounded-xl font-bold shadow-[0_8px_20px_rgba(196,168,130,0.15)] dark:shadow-none hover:shadow-[0_12px_25px_rgba(196,168,130,0.25)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                    className="group/btn btn-accent w-full py-4 rounded-none font-bold shadow-none hover:shadow-none transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-5 h-5 animate-spin" />

@@ -23,7 +23,7 @@ export default function Services() {
           {services.list.map((service, idx) => (
             <div 
               key={idx} 
-              className="flex items-center gap-3 py-3 px-4 border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 transition-all duration-250 group rounded-r-lg cursor-default"
+              className="flex items-center gap-3 py-3 px-4 border-l-2 border-l-transparent hover:border-l-accent hover:bg-accent-muted/30 transition-all duration-250 group rounded-none cursor-default"
             >
               <div className="shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-accent group-hover:scale-115 transition-transform duration-300" />
