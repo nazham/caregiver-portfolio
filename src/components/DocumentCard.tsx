@@ -57,10 +57,11 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
             href={pdfPath}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View ${title} (opens in a new tab)`}
             className="flex-1 py-2.5 px-4 bg-[#C4A882] hover:bg-[#B89B75] text-[#0F172A] text-sm font-bold rounded-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>View Document</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
           </a>
         </div>
       </div>

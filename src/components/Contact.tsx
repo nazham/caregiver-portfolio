@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, ChevronRight, CheckCircle2, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronRight, CheckCircle2, Loader2, ChevronDown } from 'lucide-react';
 import { portfolioContent } from '@/data/portfolio-content';
 
 export default function Contact() {
@@ -14,6 +14,7 @@ export default function Contact() {
   const [careType, setCareType] = useState('');
   const [shift, setShift] = useState('');
   const [extraDetails, setExtraDetails] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   // Status States
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,6 +24,12 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
+
+    // Honeypot spam protection validation
+    if (honeypot.trim()) {
+      setIsSubmitted(true);
+      return;
+    }
 
     // Client-side validations
     if (!name.trim()) {
@@ -175,6 +182,20 @@ export default function Contact() {
               ) : (
                 /* Booking Form View */
                 <form className="space-y-6" onSubmit={handleSubmit}>
+                  {/* Honeypot field - hidden from users but visible to spam bots */}
+                  <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
+                    <label htmlFor="contact-website">Leave this field empty</label>
+                    <input
+                      type="text"
+                      id="contact-website"
+                      name="contact-website"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="new-password"
+                    />
+                  </div>
+
                   {errorMsg && (
                     <div 
                       className="p-4 bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 rounded-lg border border-red-100 dark:border-red-950/30 text-sm font-medium"
@@ -236,7 +257,7 @@ export default function Contact() {
                           id="contact-care-type"
                           value={careType}
                           onChange={(e) => setCareType(e.target.value)}
-                          className={`w-full form-input appearance-none cursor-pointer ${
+                          className={`w-full form-input appearance-none pr-10 cursor-pointer ${
                             careType ? 'text-primary-text' : 'text-muted-text'
                           }`}
                         >
@@ -245,6 +266,9 @@ export default function Contact() {
                             <option key={oIdx} value={opt} className="text-[#0F172A] dark:text-slate-900">{opt}</option>
                           ))}
                         </select>
+                        <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-muted-text">
+                          <ChevronDown className="w-4 h-4" />
+                        </div>
                       </div>
                     </div>
                     <div>
@@ -259,7 +283,7 @@ export default function Contact() {
                           id="contact-shift"
                           value={shift}
                           onChange={(e) => setShift(e.target.value)}
-                          className={`w-full form-input appearance-none cursor-pointer ${
+                          className={`w-full form-input appearance-none pr-10 cursor-pointer ${
                             shift ? 'text-primary-text' : 'text-muted-text'
                           }`}
                         >
@@ -268,6 +292,9 @@ export default function Contact() {
                             <option key={oIdx} value={opt} className="text-[#0F172A] dark:text-slate-900">{opt}</option>
                           ))}
                         </select>
+                        <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-muted-text">
+                          <ChevronDown className="w-4 h-4" />
+                        </div>
                       </div>
                     </div>
                   </div>

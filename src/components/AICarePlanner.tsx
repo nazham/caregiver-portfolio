@@ -96,11 +96,9 @@ export default function AICarePlanner() {
       }
     } catch (err) {
       console.warn("API route failed, falling back to local care plan generator.", err);
-      // Fallback: Generate local plan so the client gets a beautiful experience even without Gemini credentials
-      setTimeout(() => {
-        setCarePlan(generateMockCarePlan(careNeeds));
-        setLoading(false);
-      }, 800); // Small delay to mock network request
+      // Fallback: Generate local plan instantly when the API fails
+      setCarePlan(generateMockCarePlan(careNeeds));
+      setLoading(false);
       return;
     }
     

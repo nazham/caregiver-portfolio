@@ -40,8 +40,15 @@ export default function Pricing() {
             </div>
             
             {/* Sliding Toggle Control */}
-            <div className="bg-primary-text/5 p-1 rounded-lg inline-flex relative border border-light-border">
+            <div 
+              role="tablist"
+              aria-label="Visit shift pricing selector"
+              className="bg-primary-text/5 p-1 rounded-lg inline-flex relative border border-light-border"
+            >
               <button 
+                role="tab"
+                aria-selected={pricingTab === 'day'}
+                aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('day')}
                 className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
                   pricingTab === 'day' 
@@ -52,6 +59,9 @@ export default function Pricing() {
                 Day Visit
               </button>
               <button 
+                role="tab"
+                aria-selected={pricingTab === 'night'}
+                aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('night')}
                 className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
                   pricingTab === 'night' 
@@ -75,7 +85,12 @@ export default function Pricing() {
           </div>
 
           {/* Pricing Details Layout */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div 
+            id="pricing-tabpanel"
+            role="tabpanel"
+            aria-label={`${pricingTab === 'day' ? 'Day' : 'Night'} Shift Rates and Features`}
+            className="grid md:grid-cols-2 gap-8 items-center"
+          >
             
             {/* Features Info column */}
             <div className="order-2 md:order-1">

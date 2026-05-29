@@ -1,7 +1,40 @@
 import { NextResponse } from 'next/server';
 
+// Memory cache for rate limiting (max 5 requests per minute per IP)
+const ipCache = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const MAX_REQUESTS = 5;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const clientData = ipCache.get(ip);
+
+  if (!clientData) {
+    ipCache.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return false;
+  }
+
+  if (now > clientData.resetTime) {
+    ipCache.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return false;
+  }
+
+  clientData.count += 1;
+  if (clientData.count > MAX_REQUESTS) {
+    return true;
+  }
+
+  return false;
+}
+
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || request.headers.get('x-real-ip') || '127.0.0.1';
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ error: 'Too many requests. Please try again in a minute.' }, { status: 429 });
+    }
+
     const { careNeeds } = await request.json();
 
     if (!careNeeds || typeof careNeeds !== 'string' || !careNeeds.trim()) {
