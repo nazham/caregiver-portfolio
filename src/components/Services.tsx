@@ -19,7 +19,7 @@ export default function Services() {
         </div>
 
         {/* Services List Grid — Elegant, compact, and responsive list layout with hover details */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3 mb-4">
           {services.list.map((service, idx) => (
             <div 
               key={idx} 
@@ -36,7 +36,7 @@ export default function Services() {
         </div>
 
         {/* Interactive AI Care Routine Planner Component */}
-        <AICarePlanner />
+        {/* <AICarePlanner /> */}
 
       </div>
     </section>
