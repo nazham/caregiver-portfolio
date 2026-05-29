@@ -122,6 +122,6 @@
 /* Form */
 
 .form-input {
-  @apply px-4 py-3 rounded-lg border border-primary-border focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all duration-200 bg-primary-bg text-primary-text placeholder-muted-text dark:focus:ring-accent/30;
+  @apply px-4 py-3 rounded-lg border border-primary-border hover:border-accent/30 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all duration-200 bg-primary-bg text-primary-text placeholder-muted-text dark:focus:ring-accent/30;
 }
 

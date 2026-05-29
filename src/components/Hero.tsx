@@ -29,9 +29,9 @@ export default function Hero() {
           <div className="max-w-xl order-2 lg:order-1 flex flex-col">
             {/* Understated availability badge — Desktop only */}
             <div 
-              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-border text-lead-text text-xs font-medium uppercase tracking-wider mb-8 self-start"
+              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-8 self-start"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
             
@@ -82,31 +82,33 @@ export default function Hero() {
           <div className="relative mx-auto lg:ml-auto w-full max-w-md order-1 lg:order-2 flex flex-col">
             {/* Understated availability badge — Mobile only */}
             <div 
-              className="inline-flex lg:hidden items-center gap-2 px-3 py-1.5 rounded-full border border-primary-border text-lead-text text-xs font-medium uppercase tracking-wider mb-4 w-fit"
+              className="inline-flex lg:hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-muted/30 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4 w-fit"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
  
-            <div className="relative bg-secondary-bg p-1.5 rounded-2xl border border-light-border w-full">
+            <div className="relative bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-1.5 rounded-2xl border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.06)] dark:shadow-none w-full">
               <Image 
                 src={personalInfo.profileImage} 
                 alt={`${personalInfo.name} - Professional Caregiver Portrait`} 
                 width={500}
                 height={500}
-                className="w-full aspect-[4/5] rounded-xl object-cover object-top bg-primary-bg"
+                className="w-full aspect-4/5 rounded-xl object-cover object-top bg-primary-bg"
                 priority={true} // Informs Next.js to preload and assign high priority (LCP)
               />
             </div>
  
             {/* Subtle credential tag — no bounce, positioned bottom-left */}
             <div 
-              className="absolute -bottom-4 -left-4 bg-secondary-bg px-5 py-3 rounded-xl border border-light-border dark:border-primary-border flex items-center gap-3"
+              className="absolute -bottom-4 -left-4 bg-linear-to-b from-secondary-bg to-secondary-bg/95 px-5 py-3 rounded-2xl border border-accent/20 dark:border-light-border shadow-[0_12px_40px_rgba(196,168,130,0.1)] dark:shadow-none flex items-center gap-4 transition-all duration-300 hover:border-accent/40"
             >
-              <Award className="w-5 h-5 text-accent" />
+              <div className="bg-accent-muted rounded-lg border border-accent/10 shrink-0 text-accent">
+                <Award className="w-5 h-5" />
+              </div>
               <div>
-                <p className="text-[10px] text-muted-text font-medium uppercase tracking-wider">Certified Professional</p>
-                <p className="text-sm font-semibold text-primary-text">Diploma in Caregiving</p>
+                <p className="text-[9px] text-muted-text font-semibold uppercase tracking-wider leading-none">Certified Professional</p>
+                <p className="text-sm font-bold text-primary-text mt-1 leading-none">Diploma in Caregiving</p>
               </div>
             </div>
           </div>
