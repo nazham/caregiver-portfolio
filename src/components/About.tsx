@@ -33,11 +33,13 @@ export default function About() {
               <div className="w-12 h-px bg-accent mt-5" aria-hidden="true"></div>
             </div>
             
-            <div className="space-y-6 text-lead-text text-base leading-[1.8]">
+            <div className="space-y-8">
               {about.bioParagraphs.map((paragraph, idx) => (
                 <p 
                   key={idx} 
-                  className={idx === 0 ? "text-xl sm:text-2xl heading-serif italic text-primary-text font-medium border-l-4 border-accent pl-6 py-2 leading-relaxed" : ""}
+                  className={idx === 0 
+                    ? "text-xl sm:text-2xl heading-serif italic text-primary-text font-medium border-l-4 border-accent pl-6 py-2.5 leading-relaxed" 
+                    : "text-secondary-text text-base leading-relaxed"}
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
@@ -61,7 +63,7 @@ export default function About() {
           </article>
           
           {/* Values Cards Column (40% width on desktop) */}
-          <aside className="lg:col-span-2 space-y-6" aria-labelledby="principles-title">
+          <aside className="lg:col-span-2 space-y-6 lg:pt-14" aria-labelledby="principles-title">
             <h3 id="principles-title" className="text-xs font-medium uppercase tracking-[0.2em] text-muted-text">My Care Principles</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
               {about.values.map((item, idx) => (
