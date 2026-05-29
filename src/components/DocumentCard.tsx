@@ -17,22 +17,22 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
 
   return (
     <article 
-      className="group bg-secondary-bg border border-primary-border dark:border-light-border hover:border-accent/20 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] rounded-2xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="group p-2 bg-linear-to-b from-secondary-bg to-secondary-bg/50 border border-accent/30 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
-      {/* Thumbnail Cover — Full-bleed preview to eliminate empty space */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-light-border">
+      {/* Inset Thumbnail Cover with rounded corners and border frame */}
+      <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl border border-light-border dark:border-primary-border/20 bg-primary-bg">
         <Image 
           src={thumbPath}
           alt={`${title} Thumbnail`}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover object-top filter brightness-[0.93] contrast-[0.97] saturate-[0.8] sepia-[0.12] transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-top filter brightness-[0.93] contrast-[0.97] saturate-[0.85] sepia-[0.12] transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-100 group-hover:contrast-100 group-hover:saturate-100 group-hover:sepia-0"
           priority={priority}
         />
       </div>
 
       {/* Info Content */}
-      <div className="p-6 flex-1 flex flex-col justify-between">
+      <div className="pt-5 px-1 pb-1 flex-1 flex flex-col justify-between">
         <div>
           {/* Document Type Badge */}
           <span 

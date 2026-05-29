@@ -4,9 +4,9 @@
 
 :root {
   /* ── Light Mode Color Palette ── */
-  --bg-primary: #FAF6F0;       /* Soft Cream */
-  --bg-secondary: #FDFBF7;     /* Warm Alabaster (reduces raw white) */
-  --bg-panel: #F3ECE3;         /* Warm Sand-Cream */
+  --bg-primary: #F5F0E8;       /* Deepened Soft Cream */
+  --bg-secondary: #FDFBF7;     /* Warm Alabaster */
+  --bg-panel: #EFE7DD;         /* Deepened Warm Sand-Cream */
   
   --text-primary: #0F172A;     /* Navy */
   --text-secondary: rgba(15, 23, 42, 0.75); /* Navy / 75 */

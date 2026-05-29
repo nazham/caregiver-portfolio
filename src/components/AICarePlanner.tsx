@@ -108,7 +108,7 @@ export default function AICarePlanner() {
   return (
     <section 
       aria-labelledby="ai-planner-title"
-      className="bg-secondary-bg rounded-2xl p-8 md:p-12 border border-light-border hover:border-accent/20 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] max-w-4xl mx-auto mb-20 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="bg-linear-to-br from-secondary-bg to-secondary-bg/95 rounded-2xl p-8 md:p-12 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] max-w-4xl mx-auto mb-20 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       <div className="relative z-10">
         
