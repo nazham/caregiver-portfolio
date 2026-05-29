@@ -11,24 +11,24 @@ export default function Services() {
       <div className="container-custom">
         
         {/* Asymmetric Header — left-aligned with decorative rule */}
-        <div className="max-w-xl mb-16">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent mb-3">What I Offer</p>
-          <h2 className="section-title">{services.title}</h2>
-          <div className="w-12 h-px bg-accent mt-2 mb-5" aria-hidden="true"></div>
-          <p className="text-lead-text leading-relaxed">{services.description}</p>
+        <div className="max-w-2xl mb-20">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">What I Offer</p>
+          <h2 className="heading-serif text-4xl sm:text-5xl font-bold text-primary-text mb-6 leading-tight">{services.title}</h2>
+          <div className="w-16 h-1 bg-accent mb-8 rounded-full" aria-hidden="true"></div>
+          <p className="text-lead-text text-lg leading-relaxed max-w-xl">{services.description}</p>
         </div>
 
         {/* Services List Grid — Elegant, compact, and responsive list layout */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-2 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-4 mb-24">
           {services.list.map((service, idx) => (
             <div 
               key={idx} 
-              className="flex items-start gap-3 py-3 border-b border-light-border hover:border-accent/30 transition-colors duration-350 group"
+              className="flex items-start gap-3.5 py-4 border-b border-light-border hover:border-accent/50 transition-all duration-300 group"
             >
-              <div className="mt-1 shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-accent group-hover:scale-110 transition-transform duration-300" />
+              <div className="mt-0.5 shrink-0">
+                <CheckCircle2 className="w-5 h-5 text-accent group-hover:scale-125 transition-transform duration-300" />
               </div>
-              <span className="font-medium text-secondary-text text-sm sm:text-[0.95rem] leading-relaxed transition-colors duration-300 group-hover:text-primary-text">
+              <span className="font-medium text-secondary-text text-base leading-relaxed transition-colors duration-300 group-hover:text-primary-text">
                 {service}
               </span>
             </div>

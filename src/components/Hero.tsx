@@ -29,13 +29,13 @@ export default function Hero() {
           <div className="max-w-xl order-2 lg:order-1 flex flex-col">
             {/* Understated availability badge — Desktop only */}
             <div 
-              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-border text-lead-text text-xs font-medium uppercase tracking-wider mb-8 self-start"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/20 text-accent text-xs font-semibold uppercase tracking-widest mb-8 self-start bg-accent/5"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
             
-            <h1 className="heading-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold text-primary-text leading-[1.1] mb-4 sm:mb-6 order-1">
+            <h1 className="heading-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-text leading-[1.05] mb-6 sm:mb-8 order-1">
               {hero.title.includes('Professional, Compassionate') ? (
                 <>
                   Professional, <br className="sm:hidden" /> Compassionate
@@ -43,36 +43,36 @@ export default function Hero() {
               ) : (
                 hero.title
               )}{' '}
-              <span className="text-accent block">{hero.titleHighlight}</span>
+              <span className="text-accent">{hero.titleHighlight}</span>
             </h1>
             
             {/* CTA Buttons — Second on mobile, third on desktop */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-0 mb-6 lg:mb-8 order-2 lg:order-3">
+            <div className="flex flex-col sm:flex-row gap-4 pt-8 lg:pt-6 mb-8 lg:mb-10 order-2 lg:order-3">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-3.5 rounded-lg text-center"
+                className="btn-primary px-8 py-4 rounded-full text-center text-sm font-semibold hover:shadow-lg hover:shadow-primary-text/10 transition-all duration-300"
               >
                 {hero.ctaPrimary}
               </a>
               <a 
                 href="#credentials" 
-                className="btn-secondary px-8 py-3.5 rounded-lg text-center"
+                className="btn-secondary px-8 py-4 rounded-full text-center text-sm font-semibold hover:bg-primary-text/10 transition-all duration-300"
               >
                 {hero.ctaSecondary}
               </a>
             </div>
  
             {/* Subtitle — Third on mobile, second on desktop */}
-            <p className="text-sm sm:text-lg text-lead-text mb-4 lg:mb-10 leading-relaxed max-w-md order-3 lg:order-2">
+            <p className="text-base sm:text-lg text-lead-text mb-8 lg:mb-12 leading-relaxed max-w-xl order-3 lg:order-2">
               {hero.subtitle}
             </p>
  
             {/* Micro Badges — Fourth on both mobile and desktop */}
-            <div className="mt-4 lg:mt-0 flex items-center gap-8 text-xs text-muted-text font-medium uppercase tracking-wider border-t border-light-border pt-4 lg:pt-8 order-4">
+            <div className="mt-8 lg:mt-auto flex flex-wrap items-center gap-8 text-xs text-muted-text font-semibold uppercase tracking-wider border-t border-light-border pt-8 order-4">
               {hero.bullets.map((bullet, idx) => (
-                <div key={idx} className="flex items-center gap-2">
+                <div key={idx} className="flex items-center gap-2.5">
                    {getIcon(bullet.iconName)}
-                  <span>{bullet.text}</span>
+                  <span className="text-secondary-text">{bullet.text}</span>
                 </div>
               ))}
             </div>
@@ -82,9 +82,9 @@ export default function Hero() {
           <div className="relative mx-auto lg:ml-auto w-full max-w-md order-1 lg:order-2 flex flex-col">
             {/* Understated availability badge — Mobile only */}
             <div 
-              className="inline-flex lg:hidden items-center gap-2 px-3 py-1.5 rounded-full border border-primary-border text-lead-text text-xs font-medium uppercase tracking-wider mb-4 w-fit"
+              className="inline-flex lg:hidden items-center gap-2 px-4 py-2 rounded-full border border-accent/20 text-accent text-xs font-semibold uppercase tracking-widest mb-4 w-fit bg-accent/5"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
               {hero.badgeText}
             </div>
  
@@ -101,12 +101,12 @@ export default function Hero() {
  
             {/* Subtle credential tag — no bounce, positioned bottom-left */}
             <div 
-              className="absolute -bottom-4 -left-4 bg-secondary-bg px-5 py-3 rounded-xl border border-light-border dark:border-primary-border flex items-center gap-3"
+              className="absolute -bottom-4 -left-4 bg-secondary-bg px-6 py-4 rounded-xl border border-light-border dark:border-primary-border flex items-center gap-3 shadow-lg shadow-primary-text/5 hover:shadow-primary-text/10 transition-shadow duration-300"
             >
-              <Award className="w-5 h-5 text-accent" />
+              <Award className="w-5 h-5 text-accent shrink-0" />
               <div>
-                <p className="text-[10px] text-muted-text font-medium uppercase tracking-wider">Certified Professional</p>
-                <p className="text-sm font-semibold text-primary-text">Diploma in Caregiving</p>
+                <p className="text-[11px] text-muted-text font-semibold uppercase tracking-widest">Certified Professional</p>
+                <p className="text-sm font-bold text-primary-text">Diploma in Caregiving</p>
               </div>
             </div>
           </div>

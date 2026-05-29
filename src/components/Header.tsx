@@ -86,30 +86,34 @@ export default function Header() {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-12">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
+              className="text-sm font-semibold text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer relative group"
             >
               About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
+              className="text-sm font-semibold text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer relative group"
             >
               Services
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('credentials')} 
-              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
+              className="text-sm font-semibold text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer relative group"
             >
               Credentials
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="text-sm font-medium text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer"
+              className="text-sm font-semibold text-lead-text hover:text-accent transition-colors duration-300 cursor-pointer relative group"
             >
               Rates
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </button>
             
             {/* Theme Toggle Button */}
@@ -130,7 +134,7 @@ export default function Header() {
 
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="btn-primary px-5 py-2.5 rounded-full text-sm"
+              className="btn-primary px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-primary-text/10 transition-all"
             >
               Book a Visit
               <ArrowRight className="w-4 h-4" />

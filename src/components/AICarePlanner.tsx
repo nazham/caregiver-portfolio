@@ -108,17 +108,17 @@ export default function AICarePlanner() {
   return (
     <section 
       aria-labelledby="ai-planner-title"
-      className="bg-secondary-bg rounded-2xl p-8 md:p-12 border border-light-border hover:border-accent/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] max-w-4xl mx-auto mb-20 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="bg-secondary-bg rounded-2xl p-10 md:p-14 border border-light-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 max-w-5xl mx-auto mb-24 relative transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
     >
       <div className="relative z-10">
         
         {/* Title */}
-        <div className="flex items-center gap-3 mb-4">
-          <Sparkles className="w-5 h-5 text-accent" />
-          <h3 id="ai-planner-title" className="heading-serif text-2xl font-bold text-primary-text">{aiPlanner.title}</h3>
+        <div className="flex items-center gap-3 mb-6">
+          <Sparkles className="w-6 h-6 text-accent" />
+          <h3 id="ai-planner-title" className="heading-serif text-3xl font-bold text-primary-text">{aiPlanner.title}</h3>
         </div>
         
-        <p className="text-lead-text mb-8 max-w-2xl leading-relaxed">
+        <p className="text-lead-text text-lg mb-10 max-w-3xl leading-relaxed">
           {aiPlanner.description}
         </p>
         
@@ -130,13 +130,13 @@ export default function AICarePlanner() {
             onChange={(e) => setCareNeeds(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}
             placeholder={aiPlanner.placeholder}
-            className="flex-1 form-input py-4 px-5"
+            className="flex-1 form-input py-4 px-5 text-base"
             aria-label="Describe client care needs"
           />
           <button 
             onClick={handleGenerate}
             disabled={loading || !careNeeds.trim()}
-            className="btn-primary px-6 py-4 rounded-lg min-w-[200px]"
+            className="btn-primary px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-primary-text/10 min-w-[220px] transition-all"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : `✨ ${aiPlanner.ctaText}`}
           </button>
@@ -155,23 +155,23 @@ export default function AICarePlanner() {
         {/* Results Showcase */}
         {carePlan && (
           <div 
-            className="bg-primary-bg border border-light-border rounded-xl p-6 md:p-8 mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+            className="bg-primary-bg border border-light-border rounded-2xl p-8 md:p-10 mt-8 animate-in fade-in slide-in-from-bottom-4 duration-500"
           >
-            <h4 className="heading-serif text-xl font-bold text-primary-text mb-2">{carePlan.title}</h4>
-            <p className="text-muted-text mb-6 italic">{carePlan.intro}</p>
+            <h4 className="heading-serif text-2xl font-bold text-primary-text mb-3">{carePlan.title}</h4>
+            <p className="text-lead-text mb-8 italic text-lg">{carePlan.intro}</p>
             
-            <div className="space-y-3">
+            <div className="space-y-4">
               {carePlan.schedule.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 bg-secondary-bg dark:bg-panel-bg/40 border border-light-border rounded-lg"
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-5 bg-secondary-bg border border-light-border rounded-lg hover:border-accent/30 hover:bg-secondary-bg/80 transition-all duration-300"
                 >
-                  <div className="min-w-[140px] font-medium text-accent text-sm mt-0.5">
+                  <div className="min-w-[160px] font-semibold text-accent text-sm">
                     {item.timeOfDay}
                   </div>
-                  <div>
-                    <h5 className="font-semibold text-primary-text text-sm mb-1">{item.task}</h5>
-                    <p className="text-muted-text text-sm leading-relaxed">{item.description}</p>
+                  <div className="flex-1">
+                    <h5 className="font-bold text-primary-text text-base mb-2">{item.task}</h5>
+                    <p className="text-muted-text leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

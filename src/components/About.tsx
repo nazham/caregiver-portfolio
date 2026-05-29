@@ -28,9 +28,9 @@ export default function About() {
           {/* Bio Column (60% width on desktop) */}
           <article className="lg:col-span-3 space-y-8">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent mb-3">About Me</p>
-              <h2 className="heading-serif text-3xl sm:text-4xl font-bold text-primary-text">{about.title}</h2>
-              <div className="w-12 h-px bg-accent mt-5" aria-hidden="true"></div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">About Me</p>
+              <h2 className="heading-serif text-4xl sm:text-5xl font-bold text-primary-text leading-tight">{about.title}</h2>
+              <div className="w-16 h-1 bg-accent mt-6 rounded-full" aria-hidden="true"></div>
             </div>
             
             <div className="space-y-6 text-lead-text text-base leading-[1.8]">
@@ -47,18 +47,18 @@ export default function About() {
           {/* Values Cards Column (40% width on desktop) */}
           <aside className="lg:col-span-2 space-y-6" aria-labelledby="principles-title">
             <h3 id="principles-title" className="text-xs font-medium uppercase tracking-[0.2em] text-muted-text">My Care Principles</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {about.values.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-primary-bg p-5 rounded-xl border border-light-border flex gap-4 items-start transition-colors duration-300 hover:border-accent/30"
+                  className="bg-primary-bg p-6 rounded-xl border border-light-border flex gap-4 items-start transition-all duration-300 hover:border-accent/40 hover:shadow-md hover:shadow-accent/5"
                 >
-                  <div className="bg-secondary-bg p-2.5 rounded-lg border border-light-border shrink-0">
+                  <div className="bg-accent/10 p-3 rounded-lg border border-accent/20 shrink-0 flex items-center justify-center">
                     {getIcon(item.iconName, 'w-5 h-5 text-accent')}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary-text mb-1 text-sm">{item.title}</h4>
-                    <p className="text-sm text-muted-text leading-relaxed">{item.description}</p>
+                    <h4 className="font-semibold text-primary-text mb-2 text-base">{item.title}</h4>
+                    <p className="text-sm text-lead-text leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

@@ -30,20 +30,20 @@ export default function Pricing() {
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-primary-bg border border-light-border rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
+          className="bg-primary-bg border border-light-border rounded-2xl p-10 md:p-16 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-14 gap-8">
             <div>
-              <h3 className="heading-serif text-2xl font-bold text-primary-text">{pricing.title}</h3>
-              <p className="text-muted-text mt-1">{pricing.description}</p>
+              <h3 className="heading-serif text-3xl font-bold text-primary-text">{pricing.title}</h3>
+              <p className="text-lead-text mt-2">{pricing.description}</p>
             </div>
             
             {/* Sliding Toggle Control */}
             <div 
               role="tablist"
               aria-label="Visit shift pricing selector"
-              className="bg-primary-text/5 p-1 rounded-lg inline-flex relative border border-light-border"
+              className="bg-primary-text/5 p-1.5 rounded-lg inline-flex relative border border-light-border"
             >
               <button 
                 role="tab"
@@ -89,45 +89,45 @@ export default function Pricing() {
             id="pricing-tabpanel"
             role="tabpanel"
             aria-label={`${pricingTab === 'day' ? 'Day' : 'Night'} Shift Rates and Features`}
-            className="grid md:grid-cols-2 gap-8 items-center"
+            className="grid md:grid-cols-2 gap-12 items-center"
           >
             
             {/* Features Info column */}
             <div className="order-2 md:order-1">
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {activePlan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-lead-text font-medium text-sm">
+                  <li key={idx} className="flex items-center gap-3.5 text-lead-text font-medium text-base">
                     {getFeatureIcon(idx)}
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-muted-text mt-6 leading-relaxed">
+              <p className="text-xs text-muted-text mt-8 leading-relaxed">
                 {pricing.disclaimer}
               </p>
             </div>
             
             {/* Rates Card Column */}
             <article 
-              className="order-1 md:order-2 bg-secondary-bg rounded-xl p-8 text-center relative overflow-hidden text-primary-text"
+              className="order-1 md:order-2 bg-gradient-to-b from-secondary-bg to-primary-bg/30 rounded-2xl p-10 text-center relative overflow-hidden text-primary-text border border-light-border"
             >
-              <h4 className="text-primary-text/50 font-medium mb-2 text-sm">
+              <h4 className="text-lead-text font-semibold mb-4 text-sm uppercase tracking-widest">
                 {pricingTab === 'day' ? 'Daytime Rate' : 'Overnight Rate'}
               </h4>
               
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-xl font-semibold text-accent">{activePlan.currency}</span>
-                <span className="text-5xl font-extrabold tracking-tight">
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                <span className="text-2xl font-semibold text-accent">{activePlan.currency}</span>
+                <span className="text-6xl font-bold tracking-tight">
                   {activePlan.rate}
                 </span>
               </div>
-              <span className="text-secondary-bg/40 text-sm mt-1 block">
+              <span className="text-muted-text text-base block mb-8">
                 {activePlan.period}
               </span>
               
               <a 
                 href="#contact" 
-                className="btn-accent w-full mt-8 py-3 px-6 rounded-lg block text-center"
+                className="btn-accent w-full py-4 px-6 rounded-full block text-center font-semibold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300"
               >
                 Request this shift
               </a>
