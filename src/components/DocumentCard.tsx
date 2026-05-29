@@ -17,7 +17,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
 
   return (
     <article 
-      className="group p-2 bg-linear-to-b from-secondary-bg to-secondary-bg/50 border border-accent/20 border-l-3 border-l-accent/70 dark:border-l-accent dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none hover:border-accent/40 hover:border-l-accent hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] rounded-none transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
+      className="group p-2 bg-linear-to-b from-secondary-bg to-secondary-bg/50 border border-accent/20 border-l-3 border-l-accent/70 dark:border-l-accent dark:border-light-border shadow-none hover:border-accent/50 hover:border-l-accent hover:-translate-y-1 rounded-none transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col h-full motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       {/* Inset Thumbnail Cover with sharp corners and border frame */}
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-none border border-light-border dark:border-primary-border/20 bg-primary-bg">
@@ -26,7 +26,7 @@ export default function DocumentCard({ title, type, pdfPath, thumbPath, priority
           alt={`${title} Thumbnail`}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover object-top filter brightness-[0.93] contrast-[0.97] saturate-[0.85] sepia-[0.12] transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-100 group-hover:contrast-100 group-hover:saturate-100 group-hover:sepia-0"
+          className="object-cover object-top filter brightness-[0.93] contrast-[0.97] saturate-[0.85] sepia-[0.12] transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-100 group-hover:contrast-100 group-hover:saturate-100 group-hover:sepia-0"
           priority={priority}
         />
       </div>

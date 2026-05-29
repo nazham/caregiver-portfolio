@@ -76,7 +76,7 @@ export default function Pricing() {
               
               {/* Sliding Background indicator */}
               <div 
-                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-accent rounded-none transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
+                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-accent rounded-none transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] motion-reduce:transition-none"
                 style={{ 
                   transform: pricingTab === 'day' 
                     ? 'translateX(0)' 
