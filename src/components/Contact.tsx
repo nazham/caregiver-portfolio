@@ -72,14 +72,14 @@ export default function Contact() {
       <div className="container-custom">
         
         {/* Main Banner Block */}
-        <div className="bg-[#0F172A] rounded-2xl overflow-hidden border border-[#0F172A]/5 dark:border-white/5">
+        <div className="bg-white dark:bg-[#161F30] rounded-2xl overflow-hidden border border-[#0F172A]/10 dark:border-white/5 transition-colors duration-300">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
-            <aside className="lg:col-span-2 p-10 md:p-12 text-white relative overflow-hidden">
+            <aside className="lg:col-span-2 p-10 md:p-12 bg-[#FAF6F0]/60 dark:bg-[#0B0F19]/60 text-[#0F172A] dark:text-slate-100 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-[#0F172A]/10 dark:border-white/5 transition-colors duration-300">
               <div className="relative z-10">
-                <h3 className="heading-serif text-3xl font-bold mb-4">{contact.heading}</h3>
-                <p className="text-white/40 mb-10 leading-relaxed">
+                <h3 className="heading-serif text-3xl font-bold mb-4 text-[#0F172A] dark:text-slate-100">{contact.heading}</h3>
+                <p className="text-[#0F172A]/60 dark:text-slate-400 mb-10 leading-relaxed">
                   {contact.description}
                 </p>
                 
@@ -90,8 +90,8 @@ export default function Contact() {
                       <Phone className="w-5 h-5 text-[#C4A882]" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/30 font-medium uppercase tracking-wider">{details.phoneLabel}</p>
-                      <p className="font-semibold text-white/80 mt-0.5">{details.phone}</p>
+                      <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.phoneLabel}</p>
+                      <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.phone}</p>
                     </div>
                   </div>
 
@@ -110,8 +110,8 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-xs text-white/30 font-medium uppercase tracking-wider">{details.whatsappLabel}</p>
-                        <p className="font-semibold text-white/80 mt-0.5">{details.whatsapp}</p>
+                        <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.whatsappLabel}</p>
+                        <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.whatsapp}</p>
                       </div>
                     </div>
                   )}
@@ -122,8 +122,8 @@ export default function Contact() {
                       <Mail className="w-5 h-5 text-[#C4A882]" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/30 font-medium uppercase tracking-wider">{details.emailLabel}</p>
-                      <p className="font-semibold text-white/80 mt-0.5">{details.email}</p>
+                      <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.emailLabel}</p>
+                      <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.email}</p>
                     </div>
                   </div>
                   
@@ -133,10 +133,10 @@ export default function Contact() {
                       <MapPin className="w-5 h-5 text-[#C4A882]" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/30 font-medium uppercase tracking-wider">{details.locationLabel}</p>
-                      <p className="font-semibold text-white/80 mt-0.5">{details.location}</p>
+                      <p className="text-xs text-[#0F172A]/40 dark:text-slate-500 font-medium uppercase tracking-wider">{details.locationLabel}</p>
+                      <p className="font-semibold text-[#0F172A]/85 dark:text-slate-200 mt-0.5">{details.location}</p>
                       {details.locationDetails && (
-                        <p className="text-sm text-white/25 mt-1 leading-relaxed">{details.locationDetails}</p>
+                        <p className="text-sm text-[#0F172A]/50 dark:text-slate-500 mt-1 leading-relaxed">{details.locationDetails}</p>
                       )}
                     </div>
                   </div>
