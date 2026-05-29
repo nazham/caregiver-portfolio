@@ -9,9 +9,9 @@ export default function Hero() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'ShieldCheck':
-        return <ShieldCheck className="w-4 h-4 text-[#C4A882]" />;
+        return <ShieldCheck className="w-4 h-4 text-accent" />;
       case 'Clock':
-        return <Clock className="w-4 h-4 text-[#C4A882]" />;
+        return <Clock className="w-4 h-4 text-accent" />;
       default:
         return null;
     }

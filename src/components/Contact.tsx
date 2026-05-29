@@ -263,7 +263,7 @@ export default function Contact() {
                         >
                           <option value="" disabled hidden>Select care required...</option>
                           {form.servicesOptions.map((opt, oIdx) => (
-                            <option key={oIdx} value={opt} className="text-[#0F172A] dark:text-slate-900">{opt}</option>
+                            <option key={oIdx} value={opt} className="text-primary-text bg-secondary-bg">{opt}</option>
                           ))}
                         </select>
                         <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-muted-text">
@@ -289,7 +289,7 @@ export default function Contact() {
                         >
                           <option value="" disabled hidden>Select preferred shift...</option>
                           {form.shiftOptions.map((opt, oIdx) => (
-                            <option key={oIdx} value={opt} className="text-[#0F172A] dark:text-slate-900">{opt}</option>
+                            <option key={oIdx} value={opt} className="text-primary-text bg-secondary-bg">{opt}</option>
                           ))}
                         </select>
                         <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-muted-text">

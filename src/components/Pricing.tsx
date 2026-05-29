@@ -11,7 +11,7 @@ export default function Pricing() {
   const activePlan = pricing.options[pricingTab];
 
   const getFeatureIcon = (idx: number) => {
-    const iconClass = "w-4 h-4 text-[#0F172A]/30 dark:text-slate-500 shrink-0";
+    const iconClass = "w-4 h-4 text-primary-text/30 dark:text-muted-text shrink-0";
     switch (idx) {
       case 0:
         return <Clock className={iconClass} />;
@@ -121,7 +121,7 @@ export default function Pricing() {
                   {activePlan.rate}
                 </span>
               </div>
-              <span className="text-secondary-bg/40 text-sm mt-1 block">
+              <span className="text-muted-text text-sm mt-1 block">
                 {activePlan.period}
               </span>
               
