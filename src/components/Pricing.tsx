@@ -11,7 +11,7 @@ export default function Pricing() {
   const activePlan = pricing.options[pricingTab];
 
   const getFeatureIcon = (idx: number) => {
-    const iconClass = "w-4 h-4 text-primary-text/30 dark:text-muted-text shrink-0";
+    const iconClass = "w-4.5 h-4.5 text-accent shrink-0 transition-transform duration-300 group-hover:scale-110";
     switch (idx) {
       case 0:
         return <Clock className={iconClass} />;
@@ -30,7 +30,7 @@ export default function Pricing() {
         
         {/* Pricing Matrix Card */}
         <div 
-          className="bg-primary-bg border border-light-border rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
+          className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none rounded-3xl p-8 md:p-12 max-w-4xl mx-auto"
         >
           {/* Header & Toggle Switch Row */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
@@ -50,9 +50,9 @@ export default function Pricing() {
                 aria-selected={pricingTab === 'day'}
                 aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('day')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
+                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-300 cursor-pointer ${
                   pricingTab === 'day' 
-                    ? 'text-primary-text' 
+                    ? 'text-secondary-bg' 
                     : 'text-muted-text hover:text-lead-text'
                 }`}
               >
@@ -63,9 +63,9 @@ export default function Pricing() {
                 aria-selected={pricingTab === 'night'}
                 aria-controls="pricing-tabpanel"
                 onClick={() => setPricingTab('night')}
-                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 cursor-pointer ${
+                className={`relative z-10 px-6 py-2.5 text-sm font-semibold rounded-md transition-all duration-300 cursor-pointer ${
                   pricingTab === 'night' 
-                    ? 'text-primary-text' 
+                    ? 'text-secondary-bg' 
                     : 'text-muted-text hover:text-lead-text'
                 }`}
               >
@@ -74,7 +74,7 @@ export default function Pricing() {
               
               {/* Sliding Background indicator */}
               <div 
-                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-secondary-bg rounded-md border border-light-border transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
+                className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-accent rounded-md transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
                 style={{ 
                   transform: pricingTab === 'day' 
                     ? 'translateX(0)' 
@@ -96,9 +96,9 @@ export default function Pricing() {
             <div className="order-2 md:order-1">
               <ul className="space-y-4">
                 {activePlan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-lead-text font-medium text-sm">
+                  <li key={idx} className="flex items-center gap-3 text-lead-text font-medium text-sm group cursor-default">
                     {getFeatureIcon(idx)}
-                    <span>{feature}</span>
+                    <span className="transition-colors duration-300 group-hover:text-primary-text">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -109,7 +109,7 @@ export default function Pricing() {
             
             {/* Rates Card Column */}
             <article 
-              className="order-1 md:order-2 bg-secondary-bg rounded-xl p-8 text-center relative overflow-hidden text-primary-text"
+              className="order-1 md:order-2 bg-linear-to-b from-primary-bg to-primary-bg/40 border border-accent/20 dark:border-light-border p-8 rounded-2xl text-center relative overflow-hidden text-primary-text shadow-[0_8px_20px_rgba(196,168,130,0.02)] hover:border-accent/35 transition-all duration-300"
             >
               <h4 className="text-primary-text/50 font-medium mb-2 text-sm">
                 {pricingTab === 'day' ? 'Daytime Rate' : 'Overnight Rate'}

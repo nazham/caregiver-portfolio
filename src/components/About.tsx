@@ -37,10 +37,26 @@ export default function About() {
               {about.bioParagraphs.map((paragraph, idx) => (
                 <p 
                   key={idx} 
-                  className={idx === 0 ? "text-lg text-secondary-text font-medium border-l-2 border-accent pl-5 py-1 leading-[1.7]" : ""}
+                  className={idx === 0 ? "text-xl sm:text-2xl heading-serif italic text-primary-text font-medium border-l-4 border-accent pl-6 py-2 leading-relaxed" : ""}
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
+            </div>
+
+            {/* Premium Stats Grid */}
+            <div className="grid grid-cols-3 gap-6 pt-10 border-t border-accent/20 mt-10">
+              <div>
+                <p className="heading-serif text-3xl sm:text-4xl font-bold text-accent">ACA</p>
+                <p className="text-xs text-muted-text uppercase font-semibold tracking-wider mt-1">Certified</p>
+              </div>
+              <div>
+                <p className="heading-serif text-3xl sm:text-4xl font-bold text-accent">100%</p>
+                <p className="text-xs text-muted-text uppercase font-semibold tracking-wider mt-1">Dedicated</p>
+              </div>
+              <div>
+                <p className="heading-serif text-3xl sm:text-4xl font-bold text-accent">Flexible</p>
+                <p className="text-xs text-muted-text uppercase font-semibold tracking-wider mt-1">Shifts</p>
+              </div>
             </div>
           </article>
           
@@ -51,10 +67,10 @@ export default function About() {
               {about.values.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-primary-bg p-5 rounded-xl border border-light-border flex gap-4 items-start transition-colors duration-300 hover:border-accent/30"
+                  className="group bg-linear-to-b from-secondary-bg to-secondary-bg/50 p-6 rounded-2xl border border-accent/20 border-l-4 border-l-accent/70 dark:border-l-accent dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none flex gap-4 items-start transition-all duration-300 hover:border-accent/40 hover:border-l-accent hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(196,168,130,0.12)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
                 >
-                  <div className="bg-secondary-bg p-2.5 rounded-lg border border-light-border shrink-0">
-                    {getIcon(item.iconName, 'w-5 h-5 text-accent')}
+                  <div className="bg-accent-muted p-3 rounded-xl border border-accent/10 shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:border-accent/50 text-accent group-hover:text-secondary-bg">
+                    {getIcon(item.iconName, 'w-5 h-5 transition-colors duration-300')}
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary-text mb-1 text-sm">{item.title}</h4>
