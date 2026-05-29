@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, ChevronRight, CheckCircle2, Loader2, ChevronDown } from 'lucide-react';
 import { portfolioContent } from '@/data/portfolio-content';
+import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
   const { contact } = portfolioContent;
@@ -79,7 +80,8 @@ export default function Contact() {
       <div className="container-custom">
         
         {/* Main Banner Block */}
-        <div className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 rounded-none overflow-hidden border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none transition-colors duration-300">
+        <ScrollReveal>
+          <div className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 rounded-none overflow-hidden border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none transition-colors duration-300">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Contact Details Column */}
@@ -345,6 +347,7 @@ export default function Contact() {
 
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,13 +1,14 @@
 import React from 'react';
 import { ShieldCheck, MapPin } from 'lucide-react';
 import { portfolioContent } from '@/data/portfolio-content';
+import ScrollReveal from './ScrollReveal';
 
 export default function Footer() {
   const { personalInfo } = portfolioContent;
 
   return (
     <footer className="bg-primary-bg py-10 md:py-4 border-t border-light-border transition-colors duration-300">
-      <div className="container-custom flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+      <ScrollReveal className="container-custom flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
         
         {/* Logo — Serif wordmark, no icon box */}
         <span className="heading-serif font-bold text-lg text-primary-text">{personalInfo.brandName}</span>
@@ -27,7 +28,7 @@ export default function Footer() {
           </span>
         </div>
 
-      </div>
+      </ScrollReveal>
     </footer>
   );
 }

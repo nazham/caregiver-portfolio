@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Clock, Heart, Calendar } from 'lucide-react';
 import { portfolioContent } from '@/data/portfolio-content';
+import ScrollReveal from './ScrollReveal';
 
 export default function Pricing() {
   const { pricing } = portfolioContent;
@@ -29,9 +30,10 @@ export default function Pricing() {
       <div className="container-custom">
         
         {/* Pricing Matrix Card */}
-        <div 
-          className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none rounded-none p-8 md:p-12 max-w-4xl mx-auto"
-        >
+        <ScrollReveal>
+          <div 
+            className="bg-linear-to-b from-secondary-bg to-secondary-bg/95 border border-accent/20 dark:border-light-border shadow-[0_8px_30px_rgba(196,168,130,0.04)] dark:shadow-none rounded-none p-8 md:p-12 max-w-4xl mx-auto"
+          >
           {/* Header & Toggle Switch Row */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
             <div>
@@ -134,7 +136,9 @@ export default function Pricing() {
             </article>
 
           </div>
-        </div>
+
+          </div>
+        </ScrollReveal>
 
       </div>
     </section>
